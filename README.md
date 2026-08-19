@@ -102,6 +102,8 @@ gym-operator/
 
 No gym data ever lives in this repo — that's the point.
 
+Also here: [gym-operator-skill-explainer.html](gym-operator-skill-explainer.html) — a one-page visual explainer of how the skill and your knowledge base fit together (download it and open it in a browser).
+
 ## Questions
 
 Open an issue, or reach out to Level Method.

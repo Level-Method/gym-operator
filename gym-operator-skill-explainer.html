@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Gym Operator Skill — Explainer</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f5f5f5; --paper2:#ececec; --ink:#2d3142; --muted:#4f5d75; --soft:#7a8399;
+    --rule:rgba(45,49,66,0.12); --rule-solid:#bfc0c0;
+    --accent:#eb6c36; --accent-tint:rgba(235,108,54,0.08); --link:#2e5aa8;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Geist',-apple-system,sans-serif;font-size:15px;line-height:1.6;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto;padding:0 32px 96px}
+
+  .eyebrow{font-family:'Geist Mono',monospace;font-size:11px;font-weight:500;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+  header{padding:72px 0 40px;border-bottom:1px solid var(--rule)}
+  h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:44px;
+    line-height:1.1;margin:16px 0 12px;letter-spacing:-.01em}
+  .sub{color:var(--muted);max-width:64ch;margin:0}
+  .sub em{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.05em}
+
+  section{margin:64px 0 0}
+  .shead{display:flex;align-items:baseline;gap:16px;margin-bottom:8px}
+  h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:28px;margin:0}
+  .lede{color:var(--muted);margin:4px 0 28px;max-width:70ch}
+
+  .fig{background:#fff;border:1px solid var(--rule-solid);border-radius:8px;padding:24px;overflow-x:auto}
+  .figcap{font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--soft);margin-top:12px;text-align:center}
+  svg{display:block;margin:0 auto;max-width:100%;height:auto}
+
+  /* SVG text classes */
+  .t-name{font-family:'Geist',sans-serif;font-size:12px;font-weight:600;fill:var(--ink)}
+  .t-mono{font-family:'Geist Mono',monospace;font-size:9px;fill:var(--muted)}
+  .t-mono-s{font-family:'Geist Mono',monospace;font-size:9px;fill:var(--soft)}
+  .t-eyebrow{font-family:'Geist Mono',monospace;font-size:8px;font-weight:500;letter-spacing:.12em;fill:var(--soft)}
+  .t-arrow{font-family:'Geist Mono',monospace;font-size:8px;fill:var(--muted)}
+  .t-callout{font-family:'Instrument Serif',serif;font-style:italic;font-size:14px;fill:var(--ink)}
+  .t-file{font-family:'Geist Mono',monospace;font-size:11px;font-weight:600;fill:var(--ink)}
+
+  /* cards */
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:760px){.cards{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--rule-solid);border-radius:8px;padding:20px 24px}
+  .card.featured{grid-column:1/-1;border-left:3px solid var(--accent)}
+  .card .fname{font-family:'Geist Mono',monospace;font-size:13px;font-weight:600;margin:0 0 2px}
+  .card .role{font-family:'Geist Mono',monospace;font-size:9px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--soft);margin-bottom:12px}
+  .card .role b{color:var(--accent);font-weight:500}
+  .card p{margin:0 0 10px;color:var(--muted);font-size:14px}
+  .card p strong{color:var(--ink);font-weight:600}
+  .kc{font-family:'Geist Mono',monospace;font-size:10.5px;color:var(--soft);
+    border-top:1px solid var(--rule);padding-top:10px;line-height:1.9}
+  .kc b{color:var(--muted);font-weight:500}
+
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0 2px}
+  th{font-family:'Geist Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--soft);text-align:left;font-weight:500;padding:6px 12px 6px 0;border-bottom:1px solid var(--rule)}
+  td{padding:7px 12px 7px 0;border-bottom:1px solid var(--rule);color:var(--muted);vertical-align:top}
+  td:first-child{font-family:'Geist Mono',monospace;font-size:11.5px;color:var(--ink);white-space:nowrap}
+
+  .pull{border-left:2px solid var(--accent);padding:2px 0 2px 20px;margin:28px 0;
+    font-family:'Instrument Serif',serif;font-size:20px;line-height:1.5;font-style:italic}
+
+  footer{margin-top:72px;padding-top:20px;border-top:1px solid var(--rule);
+    color:var(--soft);font-size:12.5px;font-family:'Geist Mono',monospace}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Level Method · Gym Operator · v4</div>
+  <h1>One skill. Every gym.<br>Zero gym data inside it.</h1>
+  <p class="sub">The skill is pure process, and it’s AI-independent — install it in Claude, ChatGPT/Codex, Hermes, or whatever comes next, and update it for everyone at once. Everything it knows about <em>a particular gym</em> lives somewhere else entirely: a knowledge base it builds during onboarding, at a location the owner chooses.</p>
+</header>
+
+<!-- ============ 01 ARCHITECTURE ============ -->
+<section>
+  <div class="shead"><span class="eyebrow">01</span><h2>The separation</h2></div>
+  <p class="lede">The one law in SKILL.md: <strong>the skill is process, the knowledge base is data, and they never mix.</strong> That single rule is what makes the skill updatable for every gym at once, and what makes each gym's knowledge portable, shareable with its team, and owned by nobody but the gym.</p>
+
+  <div class="fig">
+  <svg viewBox="0 0 880 432" width="880" height="432" role="img" aria-label="Architecture: the skill versus the knowledge base">
+    <defs>
+      <marker id="arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0 L8 4 L0 8 z" fill="#2d3142"/>
+      </marker>
+    </defs>
+
+    <!-- eyebrows -->
+    <text class="t-eyebrow" x="32" y="52">WORKS WITH ANY AI — CLAUDE · CHATGPT/CODEX · HERMES · PUBLIC REPO</text>
+    <text class="t-eyebrow" x="512" y="52">AT THE OWNER'S CHOSEN LOCATION · SHARED DRIVE RECOMMENDED</text>
+
+    <!-- left container: the skill -->
+    <rect x="32" y="64" width="336" height="288" rx="8" fill="#ececec" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-name" x="56" y="94">THE SKILL</text>
+    <text class="t-mono-s" x="56" y="108">process only · one version for every gym</text>
+
+    <rect x="56" y="124" width="288" height="52" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-file" x="72" y="146">SKILL.md</text>
+    <text class="t-mono" x="72" y="162">the law · the loop · routing · hard lines</text>
+
+    <rect x="56" y="192" width="288" height="104" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-file" x="72" y="214">references/</text>
+    <text class="t-mono" x="72" y="232">onboarding · knowledge-base-structure</text>
+    <text class="t-mono" x="72" y="246">operator-rules · maintenance · CHANGELOG</text>
+    <text class="t-mono" x="72" y="260">jobs/ — six recurring jobs</text>
+    <text class="t-mono-s" x="72" y="282">loaded only when needed</text>
+
+    <!-- separation line -->
+    <line x1="440" y1="64" x2="440" y2="352" stroke="#eb6c36" stroke-width="1.2" stroke-dasharray="4,3"/>
+
+    <!-- right container: the KB -->
+    <rect x="512" y="64" width="336" height="288" rx="8" fill="rgba(235,108,54,0.08)" stroke="#eb6c36" stroke-width="1"/>
+    <text class="t-name" x="536" y="94">GYM OPERATIONS KNOWLEDGE BASE</text>
+    <text class="t-mono-s" x="536" y="108">data only · owned by the gym</text>
+
+    <rect x="536" y="124" width="288" height="56" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-file" x="552" y="146">gym/</text>
+    <text class="t-eyebrow" x="808" y="146" text-anchor="end">EVERGREEN</text>
+    <text class="t-mono" x="552" y="162">identity · values · usp · voice · offers</text>
+    <text class="t-mono" x="552" y="174">members · team · goals · rhythm · operations/</text>
+
+    <rect x="536" y="192" width="288" height="56" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-file" x="552" y="214">work/</text>
+    <text class="t-eyebrow" x="808" y="214" text-anchor="end">CHANGING</text>
+    <text class="t-mono" x="552" y="230">content/ · members/ · projects/ · reviews/</text>
+    <text class="t-mono" x="552" y="242">drafts, events, dated runs — archive when done</text>
+
+    <rect x="536" y="260" width="288" height="40" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-file" x="552" y="280">index.md · log.md · checklist.md</text>
+    <text class="t-mono" x="552" y="294">catalog · history · open questions</text>
+
+    <rect x="536" y="312" width="288" height="32" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-file" x="552" y="332">sources/</text>
+    <text class="t-mono" x="700" y="332">read, never edited</text>
+
+    <!-- connector skill -> KB -->
+    <rect x="384" y="124" width="112" height="14" fill="#ffffff"/>
+    <text class="t-arrow" x="440" y="134" text-anchor="middle">reads · writes · logs</text>
+    <line x1="368" y1="148" x2="504" y2="148" stroke="#2d3142" stroke-width="1" marker-end="url(#arr)"/>
+
+    <!-- callout -->
+    <line x1="440" y1="352" x2="440" y2="376" stroke="#7a8399" stroke-width="0.8"/>
+    <text class="t-callout" x="440" y="398" text-anchor="middle">The skill is machinery for every gym. The knowledge base is this gym's —</text>
+    <text class="t-callout" x="440" y="416" text-anchor="middle">updates to one can never touch the other.</text>
+  </svg>
+  <div class="figcap">Fig. 1 — Two territories, one dashed line that nothing crosses except the loop</div>
+  </div>
+</section>
+
+<!-- ============ 02 FILES ============ -->
+<section>
+  <div class="shead"><span class="eyebrow">02</span><h2>What each file does</h2></div>
+  <p class="lede">Six files, about 3,000 words total. SKILL.md is always in play; the five references load only when their moment comes — onboarding when there's no knowledge base yet, the structure spec whenever something gets written, the job files when work runs.</p>
+
+  <div class="cards">
+    <div class="card featured">
+      <p class="fname">SKILL.md</p>
+      <div class="role"><b>Always loaded</b> — the constitution</div>
+      <p>Establishes <strong>the one law</strong> (process and data never mix), defines <strong>the loop</strong>, routes each situation to the right reference — and opens every returning session with the <strong>welcome-back brief</strong>: since last time, what's coming up, and the goal scoreboard, in three lines.</p>
+      <table>
+        <tr><th>Situation</th><th>Routed to</th></tr>
+        <tr><td>no knowledge base yet</td><td>knowledge-base-structure → onboarding</td></tr>
+        <tr><td>recurring job requested</td><td>the job's reference, loop applied</td></tr>
+        <tr><td>owner describes a process</td><td>captured as an SOP page in the KB</td></tr>
+        <tr><td>new raw material arrives</td><td>maintenance → ingest</td></tr>
+        <tr><td>monthly / contradiction</td><td>maintenance → health check</td></tr>
+      </table>
+      <div class="kc"><b>hard lines:</b> may organize·analyze·draft·prepare·recommend — may never send·publish·buy·decide &nbsp;·&nbsp; no credentials, no medical info, no unpermissioned member data &nbsp;·&nbsp; never claim a save that didn't happen</div>
+    </div>
+
+    <div class="card">
+      <p class="fname">references/onboarding.md</p>
+      <div class="role"><b>The setup</b> — runs once per gym</div>
+      <p>The guided flow that <strong>creates the knowledge base</strong>, in two parts. <strong>Part 1 (today, ~10 min):</strong> location, inputs, drafts confirmed in one pass, three questions only the owner can answer, wiki built, one real job run. <strong>Part 2 (anytime):</strong> the advanced questions, seeded into checklist.md with safe defaults in place until they're answered.</p>
+      <div class="kc"><b>friction rule:</b> confirming beats composing — it never asks what the sources already answered, and skipping never feels like failing</div>
+    </div>
+
+    <div class="card">
+      <p class="fname">references/knowledge-base-structure.md</p>
+      <div class="role"><b>The spec</b> — consulted on every write</div>
+      <p>The wiki hierarchy: three layers, the nine page types, frontmatter format, linking rules, and a <strong>"where things belong" table</strong> so every new piece of knowledge has exactly one defined destination.</p>
+      <div class="kc"><b>also:</b> location principles (owner picks, shared drive rec.) · humans-first writing · size discipline — split past 1.5 screens</div>
+    </div>
+
+    <div class="card">
+      <p class="fname">references/operator-rules.md</p>
+      <div class="role"><b>The behavior</b> — how it acts on every job</div>
+      <p>The behavior rules: result first, facts / assumptions / recommendations / decisions kept separate, never invent gym facts, never assign unestablished work, write in the gym's voice, and <strong>the invisible rule</strong> — AI stays behind the counter, never talks to members.</p>
+      <div class="kc"><b>plus:</b> the correction procedure (update page → log → show the change) · restraint: one KB + one weekly job is a complete system</div>
+    </div>
+
+    <div class="card">
+      <p class="fname">references/jobs/ — six jobs</p>
+      <div class="role"><b>The job library</b> — every job onboarding names has a procedure</div>
+      <p><strong>Weekly review</strong> (with the goal scoreboard: "week 6 of 12 — +7 of +12, on pace") · <strong>content batch</strong> · <strong>member recognitions</strong> (level-ups, milestones, birthdays) · <strong>lead follow-up prep</strong> · <strong>quiet members</strong> (drift caught before it becomes a cancellation) · <strong>event promo</strong>. Every job defines a <strong>minimum viable input</strong> — "just talk your week at me" — so the first run can never stall on missing data.</p>
+      <div class="kc"><b>every job:</b> drafts, never sends · aggregate, never named-sensitive · files its output in work/ · shows its receipts</div>
+    </div>
+
+    <div class="card">
+      <p class="fname">references/maintenance.md</p>
+      <div class="role"><b>The upkeep</b> — keeps the wiki from rotting</div>
+      <p>Two procedures. <strong>Ingest:</strong> new material lands in sources/, gets compiled into the right pages, contradictions surfaced not silently overwritten. <strong>Health check</strong> (monthly): six scans — contradictions, expired goals, unconfirmed guesses, orphans, bloat, gaps.</p>
+      <div class="kc"><b>rule:</b> reports and proposes — never fixes silently, never deletes without asking</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 THE LOOP ============ -->
+<section>
+  <div class="shead"><span class="eyebrow">03</span><h2>The loop</h2></div>
+  <p class="lede">Every operation — a weekly review, a drafted post, an ingested export — runs the same four beats. The skill never works from memory of an old conversation; it references the knowledge base going in and files what changed coming out.</p>
+
+  <div class="fig">
+  <svg viewBox="0 0 880 296" width="880" height="296" role="img" aria-label="The reference, act, write back, log loop">
+    <defs>
+      <marker id="arr2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0 L8 4 L0 8 z" fill="#2d3142"/>
+      </marker>
+    </defs>
+
+    <text class="t-eyebrow" x="64" y="36">BEFORE EVERY JOB</text>
+
+    <!-- nodes -->
+    <rect x="64" y="48" width="176" height="64" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-name" x="152" y="76" text-anchor="middle">1 · REFERENCE</text>
+    <text class="t-mono" x="152" y="94" text-anchor="middle">read the pages + log.md</text>
+
+    <rect x="640" y="48" width="176" height="64" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-name" x="728" y="76" text-anchor="middle">2 · ACT</text>
+    <text class="t-mono" x="728" y="94" text-anchor="middle">do the work, under the rules</text>
+
+    <rect x="640" y="176" width="176" height="64" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-name" x="728" y="204" text-anchor="middle">3 · WRITE BACK</text>
+    <text class="t-mono" x="728" y="222" text-anchor="middle">update the right page</text>
+
+    <rect x="64" y="176" width="176" height="64" rx="6" fill="rgba(235,108,54,0.08)" stroke="#eb6c36" stroke-width="1.2"/>
+    <text class="t-name" x="152" y="204" text-anchor="middle">4 · LOG</text>
+    <text class="t-mono" x="152" y="222" text-anchor="middle">append what changed</text>
+
+    <!-- connectors (orthogonal, clockwise) -->
+    <line x1="240" y1="80" x2="632" y2="80" stroke="#2d3142" stroke-width="1" marker-end="url(#arr2)"/>
+    <line x1="728" y1="112" x2="728" y2="168" stroke="#2d3142" stroke-width="1" marker-end="url(#arr2)"/>
+    <line x1="640" y1="208" x2="248" y2="208" stroke="#2d3142" stroke-width="1" marker-end="url(#arr2)"/>
+    <line x1="152" y1="176" x2="152" y2="120" stroke="#2d3142" stroke-width="1" marker-end="url(#arr2)"/>
+
+    <!-- callout to LOG -->
+    <line x1="240" y1="252" x2="288" y2="268" stroke="#7a8399" stroke-width="0.8"/>
+    <text class="t-callout" x="296" y="276">the log is why it gets better — a corrected mistake is read before every job, and never repeated</text>
+  </svg>
+  <div class="figcap">Fig. 2 — Reference → Act → Write back → Log, on every operation, no exceptions</div>
+  </div>
+</section>
+
+<!-- ============ 04 ONBOARDING ============ -->
+<section>
+  <div class="shead"><span class="eyebrow">04</span><h2>Onboarding, step by step</h2></div>
+  <p class="lede">Onboarding <em>is</em> the setup. It asks where the knowledge base should live, interviews the owner one question at a time, then writes the whole wiki from the conversation — and immediately makes it earn its keep with one real job.</p>
+
+  <div class="fig">
+  <svg viewBox="0 0 880 696" width="880" height="696" role="img" aria-label="Onboarding: part one basics, part two advanced pass">
+    <defs>
+      <marker id="arr3" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0 L8 4 L0 8 z" fill="#2d3142"/>
+      </marker>
+    </defs>
+
+    <text class="t-eyebrow" x="64" y="20">PART 1 — THE BASICS · ~10 MINUTES · TODAY</text>
+
+    <rect x="64" y="32" width="352" height="56" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-name" x="88" y="56">1 · Welcome</text>
+    <text class="t-mono" x="88" y="74">"most of it I can figure out — you answer a handful"</text>
+
+    <rect x="64" y="112" width="352" height="56" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-name" x="88" y="136">2 · Choose the location</text>
+    <text class="t-mono" x="88" y="154">shared drive recommended · folders created</text>
+
+    <rect x="64" y="192" width="352" height="56" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-name" x="88" y="216">3 · Collect the inputs</text>
+    <text class="t-mono" x="88" y="234">website · socials · ChatGPT export · platform export</text>
+
+    <rect x="64" y="272" width="352" height="56" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-name" x="88" y="296">4 · Draft + confirm</text>
+    <text class="t-mono" x="88" y="314">it drafts what sources answer — you fix or confirm</text>
+
+    <rect x="64" y="352" width="352" height="56" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-name" x="88" y="376">5 · Three questions</text>
+    <text class="t-mono" x="88" y="394">goal · hand-off work · approvals (safe default)</text>
+
+    <rect x="64" y="432" width="352" height="56" rx="6" fill="rgba(235,108,54,0.08)" stroke="#eb6c36" stroke-width="1.2"/>
+    <text class="t-name" x="88" y="456">6 · Build the wiki + checklist</text>
+    <text class="t-mono" x="88" y="474">pages written · open questions saved for later</text>
+
+    <rect x="64" y="512" width="352" height="56" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-name" x="88" y="536">7 · Prove it</text>
+    <text class="t-mono" x="88" y="554">one real job from THEIR answers → correct → log</text>
+
+    <rect x="64" y="592" width="352" height="56" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-name" x="88" y="616">8 · One next thing</text>
+    <text class="t-mono" x="88" y="634">then stop</text>
+
+    <line x1="240" y1="88"  x2="240" y2="104" stroke="#2d3142" stroke-width="1" marker-end="url(#arr3)"/>
+    <line x1="240" y1="168" x2="240" y2="184" stroke="#2d3142" stroke-width="1" marker-end="url(#arr3)"/>
+    <line x1="240" y1="248" x2="240" y2="264" stroke="#2d3142" stroke-width="1" marker-end="url(#arr3)"/>
+    <line x1="240" y1="328" x2="240" y2="344" stroke="#2d3142" stroke-width="1" marker-end="url(#arr3)"/>
+    <line x1="240" y1="408" x2="240" y2="424" stroke="#2d3142" stroke-width="1" marker-end="url(#arr3)"/>
+    <line x1="240" y1="488" x2="240" y2="504" stroke="#2d3142" stroke-width="1" marker-end="url(#arr3)"/>
+    <line x1="240" y1="568" x2="240" y2="584" stroke="#2d3142" stroke-width="1" marker-end="url(#arr3)"/>
+
+    <!-- callouts -->
+    <line x1="416" y1="300" x2="456" y2="300" stroke="#7a8399" stroke-width="0.8"/>
+    <text class="t-callout" x="464" y="296">confirming beats composing —</text>
+    <text class="t-callout" x="464" y="314">one recap replaces eight questions</text>
+
+    <line x1="416" y1="380" x2="456" y2="380" stroke="#7a8399" stroke-width="0.8"/>
+    <text class="t-mono" x="464" y="377">anything else is skippable — skipped items</text>
+    <text class="t-mono" x="464" y="391">go on the checklist, safe defaults apply</text>
+
+    <!-- Part 2 box -->
+    <text class="t-eyebrow" x="464" y="440">PART 2 — THE ADVANCED PASS · ANYTIME</text>
+    <rect x="464" y="452" width="384" height="152" rx="8" fill="#ffffff" stroke="#bfc0c0" stroke-width="1" stroke-dasharray="4,3"/>
+    <text class="t-name" x="488" y="480">checklist.md</text>
+    <text class="t-mono" x="488" y="500">values · members · constraints · team detail</text>
+    <text class="t-mono" x="488" y="514">usp · SOP capture — plus anything skipped</text>
+    <text class="t-mono-s" x="488" y="538">say "continue setup" — two or three at a time</text>
+    <text class="t-mono-s" x="488" y="552">raised at most once per session, never a nag</text>
+    <text class="t-mono-s" x="488" y="580">getting started never depends on these</text>
+
+    <line x1="416" y1="460" x2="456" y2="460" stroke="#2d3142" stroke-width="1" marker-end="url(#arr3)"/>
+  </svg>
+  <div class="figcap">Fig. 3 — Part 1 gets them started in ~10 minutes; Part 2 lives in the checklist and deepens the wiki over time</div>
+  </div>
+
+  <div class="pull">Thin answers become pages marked "needs-confirming" rather than an interrogation. Depth comes from use, not from onboarding.</div>
+
+  <h2 style="font-size:22px;margin:40px 0 4px">The actual questions</h2>
+  <p class="lede">The friction rule: <strong>confirming beats composing.</strong> Most pages get drafted from the inputs and confirmed in one pass — the owner only composes answers to three questions today. Everything deeper waits in the checklist.</p>
+
+  <table>
+    <tr><th style="width:48px">Input</th><th>What it asks for</th><th style="width:200px">Answers</th></tr>
+    <tr><td>A</td><td>Your gym's website address</td><td>identity · offers · usp · events</td></tr>
+    <tr><td>B</td><td>Social accounts you actively post on (links)</td><td>voice · content cadence</td></tr>
+    <tr><td>C</td><td>Your ChatGPT history export, if you have one</td><td>many pages at once</td></tr>
+    <tr><td>D</td><td>A gym-software export — attendance, membership — names stripped</td><td>members · goals context</td></tr>
+  </table>
+
+  <table style="margin-top:20px">
+    <tr><th style="width:120px">Part 1 · asked</th><th>Question</th><th style="width:170px">Fills</th></tr>
+    <tr><td>1</td><td>"What are you trying to make happen right now, and by when?" <em>(grow to 200 members by December · fill the fall foundations cohort · take a real vacation without the gym stalling)</em></td><td>gym/goals.md</td></tr>
+    <tr><td>2</td><td>"What work keeps coming back every week or month — the stuff you'd hand off if you could?" <em>(social posts · promoting recurring programs · member recognitions — level-up promotions, milestones, birthdays · lead follow-up · weekly numbers · checking in on members who've gone quiet)</em></td><td>gym/rhythm.md · the first job</td></tr>
+    <tr><td>3</td><td>"Anything your team can approve without you?" <em>(discounts · refunds · schedule changes · posting to social) — wave-off-able; default: everything returns to the owner</em></td><td>gym/team.md</td></tr>
+    <tr><td>+</td><td><em>Only if there were no sources at all:</em> "What is this gym, and who is it actually for?"</td><td>gym/identity.md</td></tr>
+  </table>
+
+  <table style="margin-top:20px">
+    <tr><th style="width:120px">Confirmed</th><th>Drafted from the inputs, then confirmed in one recap</th><th style="width:170px">Fills</th></tr>
+    <tr><td>recap</td><td>Identity · voice (with a "you'd never say…" example) · offers · usp · members · content cadence · live events — presented as one summary: <em>"what's wrong or missing in that?"</em></td><td>six pages + work/projects/</td></tr>
+  </table>
+
+  <table style="margin-top:20px">
+    <tr><th style="width:120px">Part 2 · later</th><th>Seeded into checklist.md — answer anytime, two or three at a time</th><th style="width:170px">Deepens</th></tr>
+    <tr><td>◻</td><td>"What would you turn down money over?"</td><td>gym/values.md</td></tr>
+    <tr><td>◻</td><td>"Who are your members really — why do they join, why do they leave?"</td><td>gym/members.md</td></tr>
+    <tr><td>◻</td><td>"What's the real constraint — time, money, staff, space?"</td><td>gym/goals.md</td></tr>
+    <tr><td>◻</td><td>"What does each person on the team actually own?"</td><td>gym/team.md</td></tr>
+    <tr><td>◻</td><td>"Why does someone drive past two other gyms to get to you?"</td><td>gym/usp.md</td></tr>
+    <tr><td>◻</td><td>"Talk me through how you onboard a new member" — and other SOPs, one at a time</td><td>gym/operations/</td></tr>
+  </table>
+  <p class="lede" style="margin-top:16px">Skipping never feels like failing: safe defaults apply meanwhile — every approval returns to the owner, voice mirrors their website — and the checklist is raised at most once per session, only when it would make the current work better.</p>
+</section>
+
+<!-- ============ 05 WHAT IT BUILDS ============ -->
+<section>
+  <div class="shead"><span class="eyebrow">05</span><h2>What onboarding writes</h2></div>
+  <p class="lede">None of this ships inside the skill — this is the <strong>output</strong>, created at the owner's chosen location and filled with their actual answers. Two layers with different lifespans: <strong>gym/ is evergreen</strong> — how the gym operates, kept curated — while <strong>work/ is the changing layer</strong> where day-to-day outputs land: content, member management, projects and events, dated reviews. Finished projects archive; the evergreen layer stays clean.</p>
+
+  <div class="fig">
+  <svg viewBox="0 0 880 496" width="880" height="496" role="img" aria-label="The knowledge base structure onboarding creates">
+    <!-- root -->
+    <rect x="64" y="196" width="224" height="56" rx="6" fill="rgba(235,108,54,0.08)" stroke="#eb6c36" stroke-width="1.2"/>
+    <text class="t-file" x="88" y="220">gym-operations-kb/</text>
+    <text class="t-mono" x="88" y="236">at the location the owner chose</text>
+
+    <!-- branches -->
+    <path d="M288 224 H336 Q344 224 344 216 V60 Q344 52 352 52 H392" fill="none" stroke="#2d3142" stroke-width="1"/>
+    <path d="M288 224 H336 Q344 224 344 216 V116 Q344 108 352 108 H392" fill="none" stroke="#2d3142" stroke-width="1"/>
+    <path d="M288 224 H336 Q344 224 344 216 V204 Q344 196 352 196 H392" fill="none" stroke="#2d3142" stroke-width="1"/>
+    <path d="M288 224 H336 Q344 224 344 232 V312 Q344 320 352 320 H392" fill="none" stroke="#2d3142" stroke-width="1"/>
+    <path d="M288 224 H336 Q344 224 344 232 V404 Q344 412 352 412 H392" fill="none" stroke="#2d3142" stroke-width="1"/>
+
+    <!-- children -->
+    <rect x="400" y="32" width="416" height="40" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-file" x="416" y="56">index.md + checklist.md</text>
+    <text class="t-mono" x="600" y="56">what it knows — and what’s still open</text>
+
+    <rect x="400" y="88" width="416" height="40" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-file" x="416" y="112">log.md</text>
+    <text class="t-mono" x="512" y="112">append-only — corrections, decisions, changes, in order</text>
+
+    <rect x="400" y="144" width="416" height="104" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-file" x="416" y="168">gym/</text>
+    <text class="t-eyebrow" x="800" y="168" text-anchor="end">EVERGREEN</text>
+    <text class="t-mono" x="416" y="188">identity · values · usp · voice · offers</text>
+    <text class="t-mono" x="416" y="202">members · team (+ who approves what) · goals · rhythm</text>
+    <text class="t-mono" x="416" y="222">operations/ — one page per SOP, written for humans</text>
+    <text class="t-mono-s" x="416" y="240">how the gym operates — long-term, kept curated</text>
+
+    <rect x="400" y="264" width="416" height="112" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-file" x="416" y="288">work/</text>
+    <text class="t-eyebrow" x="800" y="288" text-anchor="end">CHANGING</text>
+    <text class="t-mono" x="416" y="308">content/ — social + website drafts, calendars</text>
+    <text class="t-mono" x="416" y="322">members/ — check-ins, at-risk lists, follow-up prep</text>
+    <text class="t-mono" x="416" y="336">projects/ — one folder per event · _archive/ when done</text>
+    <text class="t-mono" x="416" y="350">reviews/ — dated weekly reviews</text>
+    <text class="t-mono-s" x="416" y="368">outputs of work — they live, expire, and archive</text>
+
+    <rect x="400" y="392" width="416" height="40" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
+    <text class="t-file" x="416" y="416">sources/</text>
+    <text class="t-mono" x="512" y="416">raw material dropped in — read, never edited</text>
+
+    <!-- callout -->
+    <line x1="176" y1="252" x2="176" y2="444" stroke="#7a8399" stroke-width="0.8"/>
+    <text class="t-callout" x="176" y="466">when a piece of work reveals a stable fact about the gym,</text>
+    <text class="t-callout" x="176" y="484">the fact moves to gym/ and gets logged — work files are never the system of record.</text>
+  </svg>
+  <div class="figcap">Fig. 4 — The knowledge base: evergreen gym/ layer, changing work/ layer, built by the skill, owned by the gym</div>
+  </div>
+</section>
+
+<!-- ============ 06 OPERATION ============ -->
+<section>
+  <div class="shead"><span class="eyebrow">06</span><h2>Operation — using it day to day</h2></div>
+  <p class="lede">Onboarding happens once. This is the rest of the relationship. There are no commands to memorize — the skill's description is written so your AI recognizes these asks automatically. <strong>Say what you want in your own words</strong>; every returning session opens with the welcome-back brief before you've typed anything.</p>
+
+  <table>
+    <tr><th style="width:280px">You say</th><th>What runs</th><th style="width:210px">You get</th></tr>
+    <tr><td>"Run my weekly review"</td><td>Weekly review — reads goals, team, and the log first</td><td>Bottom line, goal scoreboard, three priorities, your calls → work/reviews/</td></tr>
+    <tr><td>"Draft this week's posts"</td><td>Content batch — your channels, your cadence, your voice</td><td>A dated batch per channel, two variants of the big one → work/content/</td></tr>
+    <tr><td>"Who's gone quiet lately?" <em>+ attendance export</em></td><td>Quiet members — drift patterns, not guesses</td><td>Ranked list + a drafted check-in for each, a human sends → work/members/</td></tr>
+    <tr><td>"Who leveled up? Draft the shout-outs"</td><td>Member recognitions — level-ups, milestones, birthdays</td><td>Public posts + private notes + the print list → work/members/</td></tr>
+    <tr><td>"Prep my lead follow-ups" <em>+ the inquiry list</em></td><td>Lead follow-up prep — prioritized, oldest first</td><td>Drafts per lead, decisions routed to you, nothing sent → work/members/</td></tr>
+    <tr><td>"Plan the promo for the fall challenge"</td><td>Event promo — works backward from event day</td><td>Dated plan + every draft → work/projects/fall-challenge/</td></tr>
+    <tr><td>"Let me talk you through how we onboard members"</td><td>SOP capture — it asks about the steps you skipped</td><td>A written SOP any coach can follow → gym/operations/</td></tr>
+    <tr><td>"Here's our updated schedule / new website"</td><td>Ingest — compiles, surfaces contradictions</td><td>Pages updated, changes logged, nothing silently overwritten</td></tr>
+    <tr><td>"Continue setup" <em>or</em> "Continue the onboarding"</td><td>The advanced pass — two or three questions</td><td>Deeper pages, items checked off with dates</td></tr>
+    <tr><td>"Health check"</td><td>Monthly maintenance</td><td>The wins scoreboard, then what needs you</td></tr>
+    <tr><td>"Pull the latest gym-operator update"</td><td>Update ritual — reads the changelog</td><td>Two lines on what's new + one offer for your gym</td></tr>
+  </table>
+
+  <div class="cards" style="margin-top:20px">
+    <div class="card">
+      <h3 style="font-size:15px;margin:0 0 10px">How to talk to it</h3>
+      <p style="font-size:14px"><strong>Describe the outcome, not the job.</strong> "I need people signed up for the nutrition challenge" works as well as naming the promo job — it routes itself.</p>
+      <p style="font-size:14px"><strong>Paste or attach real material.</strong> Every job has a minimum viable input — no export handy means "just talk your week at me" still runs.</p>
+      <p style="font-size:14px;margin-bottom:0"><strong>Correct it out loud.</strong> "That's not how we talk to members" gets written to your voice page and logged — it won't make that mistake next week.</p>
+    </div>
+    <div class="card">
+      <h3 style="font-size:15px;margin:0 0 10px">Reading its work</h3>
+      <p style="font-size:14px"><strong>Check the receipts line.</strong> Substantive answers end with what grounded them — "Grounded in: goals · team · log #14." A thin line means a page needs feeding, and it will tell you which.</p>
+      <p style="font-size:14px"><strong>It drafts, you send.</strong> Nothing it produces reaches a member, a lead, or the public without you. That never changes, whatever you ask for.</p>
+      <p style="font-size:14px;margin-bottom:0"><strong>If it feels generic,</strong> ask "what page would make this better?" — the honest answer is usually one checklist item away.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 WHY ============ -->
+<section>
+  <div class="shead"><span class="eyebrow">07</span><h2>Why the split matters</h2></div>
+  <table>
+    <tr><th>Because…</th><th>The gym gets</th></tr>
+    <tr><td>skill = process</td><td>One update improves every gym's operator at once — pull the latest, nothing personal is touched</td></tr>
+    <tr><td>KB = plain files</td><td>Portability. Claude today, ChatGPT/Codex or Hermes tomorrow — point any of them at the same folder and it knows the gym. No platform owns the knowledge</td></tr>
+    <tr><td>humans-first pages</td><td>A coach can follow an SOP with no AI involved; the team can read the whole knowledge base on the shared drive</td></tr>
+    <tr><td>log is append-only</td><td>Corrections survive forever — the operator compounds instead of starting over</td></tr>
+    <tr><td>gym/ ≠ work/</td><td>Evergreen knowledge stays clean and reviewable while day-to-day outputs — content, projects, reviews — come, go, and archive</td></tr>
+    <tr><td>owner picks the location</td><td>The gym's intelligence sits on their drive, under their control, shareable on their terms</td></tr>
+  </table>
+</section>
+
+<footer>
+  gym-operator v4 · 13 files · six-job library · ~5,000 words · SKILL.md + references/{onboarding, knowledge-base-structure, operator-rules, weekly-review, maintenance} · diagram style after cathrynlavery/diagram-design
+</footer>
+
+</div>
+</body>
+</html>
