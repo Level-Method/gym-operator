@@ -4,6 +4,22 @@ An AI operator for gym owners, by [Level Method](https://levelmethod.com).
 
 Point your AI assistant at this repo and it becomes an operator that actually knows **your** gym — your voice, your offers, your goals, your people — instead of giving generic fitness-business advice. It sets up a **Gym Operations Knowledge Base** (plain markdown files, stored wherever you choose, owned by you forever) and then does real recurring work grounded in it.
 
+## Why
+
+You already pay for AI. Ask it a blank-chat question and you get decent generic advice — the same advice every other gym gets. The real divide isn't between owners who use AI and owners who don't. It's between asking for occasional help and building something around it that persists.
+
+> AI supplies the intelligence.
+> Context makes it relevant.
+> A process makes it repeatable.
+
+This skill supplies the context and the process:
+
+- **Your gym, on paper.** One folder holds who you are, how you sound, what you sell, what you're chasing this quarter, and how your gym actually runs. Every answer is grounded in that — and every output quietly shows which of your pages it drew from.
+- **It compounds.** In a normal chat, your corrections die when the conversation ends. Here, every correction and decision is written into the knowledge base, so next week's work starts where last week's left off. Within a couple of sessions the drafts stop sounding like AI and start sounding like you.
+- **Real work, on a rhythm.** Weekly reviews scored against your goal, content batches in your voice, member recognitions, lead follow-up prep, quiet-member check-ins, event promos — each a written procedure, not a lucky prompt.
+- **You stay the owner.** It drafts, preps, and recommends behind the counter. It never posts, sends, or talks to a member — people come to a gym for people.
+- **No lock-in, ever.** Plain markdown in a folder you own. Point Claude at it today, something else next year — the knowledge base outlives any platform, and this skill.
+
 ## The fastest way to install
 
 Copy this into your AI assistant (Claude Code, Claude Desktop, Codex, or any agent that can read files and run commands):
