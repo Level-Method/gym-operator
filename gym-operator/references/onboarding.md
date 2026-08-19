@@ -143,13 +143,27 @@ Build voice from the website copy, mark it `confidence: medium`, and make one sm
 
 > One thing that'd sharpen this fast: paste me your last two or three posts. Your website shows me how you write when you're selling; your posts show me how you actually sound.
 
-## Step 5 — The questions only they can answer
+## Step 5 — What only they can answer
 
-Three, one at a time:
+**Only the first of these is genuinely a question.** The friction rule still applies here: anything the sources already answered gets confirmed, not asked.
 
-1. **Goal** — "What are you trying to make happen right now, and by when?" *(e.g. grow to 200 members by December, fill the fall foundations cohort, take a real vacation without the gym stalling)*
-2. **Hand-off work** — "What work keeps coming back every week or month — the stuff you'd hand off if you could?" *(e.g. social media posts, promoting your recurring programs, member recognitions — level-up promotions, milestones, birthdays — lead follow-up, weekly numbers, checking in on members who've gone quiet)*
-3. **Approvals** — "Anything your team can approve without you?" *(e.g. discounts, refunds, schedule changes, posting to social)* "Until you tell me otherwise I'll assume everything comes back to you." *(This one they can wave off — the default is safe.)*
+1. **Goal — ask it cold.** No website tells you what the owner is chasing right now.
+
+   > What are you trying to make happen right now, and by when?
+
+   *(e.g. grow to 200 members by December, fill the fall cohort, take a real vacation without the gym stalling.)* If the goal arrives without a date, ask for the date — the scoreboard in every review and every welcome-back brief is measured against it.
+
+2. **Recurring work — draft it, don't ask it.** You have read their site and their feed by now, so you already know most of what comes back every week. Hand them a list to correct instead of a blank page:
+
+   > From your site and your feed, here's what looks like it comes back around: [posting most days] · [the monthly community event] · [Saturday events and competitions] · [following up on trial sign-ups]. What did I miss — and which of those would you hand off tomorrow if you could?
+
+   The second half is the only part they alone know. Asking the whole thing cold makes them compose a list you could have written.
+
+3. **Approvals — offer it, let them wave it off.**
+
+   > Anything your team can approve without you — discounts, refunds, schedule changes, posting? Until you tell me otherwise, I'll assume it all comes back to you.
+
+   The default is safe, so a shrug is a complete answer. Never ask twice.
 
 Then one open door, once:
 
