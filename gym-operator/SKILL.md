@@ -30,8 +30,8 @@ Every `gym/`, `work/`, `sources/`, `assets/`, `index.md`, `log.md`, and `checkli
 
 Resolve the root, in order:
 
-1. **The location line above.** At the end of onboarding Step 2, edit this installed SKILL.md and replace the value with the absolute path. This line is the one gym-specific fact allowed in the skill: a path, nothing else.
-2. **Platform memory or project instructions** — CLAUDE.md, AGENTS.md, project instructions, or persistent memory — where onboarding also records it as a backup.
+1. **The location line above.** At the end of onboarding Step 2, edit this installed SKILL.md and replace the value with the absolute path. This line is the one gym-specific fact allowed in the skill: a path, nothing else. On platforms where the installed skill is read-only (claude.ai / Cowork, where skills are uploaded through the UI), skip this — memory is the record there.
+2. **Platform memory or project instructions** — CLAUDE.md, AGENTS.md, project instructions, or persistent memory — where onboarding also records it (as the primary record when the skill file can't be edited).
 3. **Neither is set** — ask the owner once, then record it in both places so no future session has to ask. If no knowledge base exists at all, that's a new owner: run onboarding.
 
 When installing a newer version of this skill over an existing install, carry the location line forward: copy the new files, then re-set the path on this line.

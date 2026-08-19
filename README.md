@@ -20,13 +20,30 @@ This skill supplies the context and the process:
 - **You stay the owner.** It drafts, preps, and recommends behind the counter. It never posts, sends, or talks to a member — people come to a gym for people.
 - **No lock-in, ever.** Plain markdown in a folder you own. Point Claude at it today, something else next year — the knowledge base outlives any platform, and this skill.
 
+## Before you start — two prerequisites
+
+1. **Use the desktop app, not the web browser.** In a browser tab, Claude and ChatGPT cannot reach your computer's files — so the skill can't be installed locally and your knowledge base can't live in a real folder you keep. Download the app first:
+   - **Claude Desktop:** [claude.com/download](https://claude.com/download)
+   - **ChatGPT Desktop:** [openai.com/chatgpt/download](https://openai.com/chatgpt/download/)
+   - (Claude Code, Codex, Cursor, and other terminal/IDE agents already run on your machine — you're covered.)
+2. **Planning to keep your knowledge base on Google Drive?** Install [Google Drive for desktop](https://www.google.com/drive/download/) so your Drive folders sync to your computer as real local folders your AI can read and write. The same goes for Dropbox/OneDrive — use their desktop sync apps, not just the website.
+
 ## The fastest way to install
 
-Copy this into your AI assistant (Claude Code, Claude Desktop, Codex, or any agent that can read files and run commands):
+**Using Claude Code, Cursor, Codex, or any agent that can read files and run commands?** Copy this into it:
 
 > Install the Gym Operator skill from https://github.com/Level-Method/gym-operator — follow the install instructions in the README, then start my onboarding.
 
 That's it. The agent will install the skill and walk you through a ~10 minute setup: it reads your website and socials, drafts what it can, asks you only what it can't figure out, and then runs its first real job for you.
+
+**Using Claude on the web or Cowork (the Claude desktop app)?** Skills there are installed by you through the interface, not by the agent — two minutes, no terminal:
+
+1. Download **`gym-operator.zip`** from the [latest release](https://github.com/Level-Method/gym-operator/releases/latest).
+2. In Claude, make sure **Settings → Capabilities → "Code execution and file creation"** is on (on Team/Enterprise plans an admin enables Skills in organization settings).
+3. Go to **Customize → Skills**, click **+**, choose **Upload a skill**, and upload the zip.
+4. Start a chat (or a Cowork session) and say: *"Set up my gym operator."*
+
+Don't upload GitHub's "Download ZIP" of this repo — it wraps everything in an extra folder and the upload will be rejected. Use the release zip, which is packaged in the exact shape Claude expects.
 
 ## What it does
 
@@ -53,6 +70,8 @@ Plus: a welcome-back brief every session (it knows what week it is and what's co
 
 If you are an AI agent installing this skill for a gym owner:
 
+**First, check whether you can actually do this.** If you are running inside claude.ai or Cowork, your sandbox filesystem is temporary and you cannot register skills — don't improvise a workaround. Tell the owner to follow the "Using Claude on the web or Cowork" steps above (download the release zip, upload it under Customize → Skills), and offer to run onboarding as soon as it's installed. The steps below are for agents with a persistent filesystem (Claude Code, Cursor, Codex, and similar):
+
 1. **Get the files.** No git required — download and extract the repo:
 
    ```bash
@@ -64,7 +83,7 @@ If you are an AI agent installing this skill for a gym owner:
 2. **Copy the `gym-operator/` folder** (the one containing `SKILL.md`) into your platform's skills location:
    - **Claude Code (personal, all projects):** `~/.claude/skills/gym-operator/`
    - **Claude Code (one project):** `<project>/.claude/skills/gym-operator/`
-   - **Claude Desktop / claude.ai (no shell access):** the owner uploads the `gym-operator` folder as a skill under **Settings → Capabilities** instead of copying files.
+   - **Claude Desktop / claude.ai (no shell access):** the owner uploads the release zip under **Customize → Skills** instead of copying files — see "Using Claude on the web or Cowork" above.
    - **Cursor / Codex / other agents:** wherever your platform loads skills or custom instructions from; if it has no skills system, keep the folder anywhere the owner can point you at and read `SKILL.md` at the start of each session.
 
    Example for Claude Code:
@@ -91,7 +110,7 @@ The agent should: note the current "Knowledge base location" line in the install
 cp -R gym-operator-main/gym-operator/ ~/.claude/skills/gym-operator/
 ```
 
-Your knowledge base itself is never touched by updates. On the next session, the operator reads `CHANGELOG.md` and tells you what's new in two lines — and offers one new capability tied to your gym.
+On claude.ai / Cowork, updating is manual: download the newest release zip and upload it again under Customize → Skills, replacing the old version. Your knowledge base itself is never touched by updates. On the next session, the operator reads `CHANGELOG.md` and tells you what's new in two lines — and offers one new capability tied to your gym.
 
 ## Browsing your knowledge base like a wiki
 

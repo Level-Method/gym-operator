@@ -28,7 +28,7 @@ Two sentences, your own words:
 
 > Where do you want your gym's files to live? Best is a shared drive — Google Drive, Dropbox, OneDrive — so your team can read them and any AI you use can reach them. A folder on this computer works fine to start.
 
-Create `gym-operations-kb/` there with `assets/`, `gym/`, `gym/operations/`, `work/content/`, `work/members/`, `work/projects/`, `work/reviews/`, `sources/`. Then record the absolute path in both places SKILL.md names: the **Knowledge base location** line in the installed SKILL.md (replace `NOT YET SET` with the path), AND the platform's instructions or memory as backup. One line to the owner: *"Done. That folder is yours — plain files, works with any AI, your team can read it."*
+Create `gym-operations-kb/` there with `assets/`, `gym/`, `gym/operations/`, `work/content/`, `work/members/`, `work/projects/`, `work/reviews/`, `sources/`. Then record the absolute path in both places SKILL.md names: the **Knowledge base location** line in the installed SKILL.md (replace `NOT YET SET` with the path), AND the platform's instructions or memory. If the installed skill can't be edited (claude.ai / Cowork), memory alone is the record — just make sure it's actually persisted, not merely mentioned in chat. One line to the owner: *"Done. That folder is yours — plain files, works with any AI, your team can read it."*
 
 ## Step 3 — Collect the inputs
 
@@ -75,7 +75,7 @@ Whatever they don't answer goes to the checklist. Safe defaults apply meanwhile:
 Write to THEIR knowledge base:
 
 - Every `gym/` page there's real material for — drafted pages corrected per Step 4, `gym/goals.md` and `gym/rhythm.md` from Step 5.
-- A `work/projects/<name>/` folder for each live event named, with a one-paragraph brief.
+- A `work/projects/<name>/` folder for each live event named, with a one-paragraph brief named `<name>-brief.md` — filenames must stand alone in a graph view, so never a generic `brief.md`.
 - `assets/assets.md` — the asset map, from whatever input 5 produced. If assets were skipped, a stub plus a checklist item ("Where do your logo and photos live? Fills assets/assets.md — needed before I can pair photos with posts").
 - `checklist.md` — seeded with the standard Part 2 questions (below) plus anything skipped from Part 1, each with the page it fills and one line on why it matters.
 - `index.md` — everything listed, including pages not yet written.
