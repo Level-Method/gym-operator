@@ -1,6 +1,6 @@
 ---
 name: gym-operator
-description: AI operator for gym owners — sets up and runs a Gym Operations Knowledge Base (the gym's identity, voice, offers, team, goals, SOPs) at a location the owner chooses, then performs recurring gym work grounded in it. Use whenever a gym owner asks for help running their gym, including "set up my gym operator", "run my weekly review", "draft this week's posts", "who's gone quiet?", "who leveled up — draft the shout-outs", "prep my lead follow-ups", "plan the promo for our challenge/event", "write up how we onboard members" (SOP capture), "here's our updated schedule/website" (ingest), "continue setup" or "continue the onboarding" (deepen the knowledge base), or a monthly health check. Also triggers on gym business topics generally — retention, member check-ins, class promotion, gym social media, level-up recognitions. Contains process only; all gym data lives in the owner's knowledge base, never in this skill.
+description: AI operator for gym owners — sets up and runs a Gym Operations Knowledge Base (the gym's identity, voice, offers, team, goals, SOPs) at a location the owner chooses, then performs recurring gym work grounded in it. Use whenever a gym owner asks for help running their gym, including "set up my gym operator", "run my weekly review", "draft this week's posts", "who's gone quiet?", "who leveled up — draft the shout-outs", "prep my lead follow-ups", "plan the promo for our challenge/event", "write up how we onboard members" (SOP capture), "here's our updated schedule/website" (ingest), "here's our logo" or "our photos live on this drive" (asset mapping), "continue setup" or "continue the onboarding" (deepen the knowledge base), or a monthly health check. Also triggers on gym business topics generally — retention, member check-ins, class promotion, gym social media, level-up recognitions. Contains process only; all gym data lives in the owner's knowledge base, never in this skill.
 ---
 
 # Gym Operator
@@ -57,6 +57,7 @@ Then one offer, not a menu. If the owner opens with a direct request, answer it 
 | Owner says "continue setup", "continue the onboarding", or answers an open item | Fill the page, check it off in `checklist.md` with the date, log it |
 | The skill was just updated | Read `CHANGELOG.md`; two lines on what's new; offer ONE new capability tied to their gym |
 | New raw material arrives (export, notes, website) | Ingest per `references/maintenance.md` |
+| Owner shares brand files, photos, or a place they live | File or map them per the Assets section of `references/knowledge-base-structure.md`; update `assets/assets.md` |
 | Monthly, or something contradicts what you know | Health check per `references/maintenance.md` |
 
 ## Hard lines — always active

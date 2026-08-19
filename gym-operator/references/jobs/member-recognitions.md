@@ -15,7 +15,7 @@ Who and what: level-ups/promotions, milestones (100th class, one year), birthday
 ## Process
 
 1. Gather the list and group it: public shout-outs vs. private notes. Big milestones usually deserve both.
-2. Draft the public pieces in the gym's voice — specific to the achievement, never generic praise.
+2. Draft the public pieces in the gym's voice — specific to the achievement, never generic praise. Suggest a photo from `assets/assets.md` when the map has one for the member or the moment; the map's off-limits marks are the only gate.
 3. Draft the private notes from the owner or coach — short, personal, in their words.
 4. Prep the physical list: certificates to print, boards to update, anything the gym does in person.
 5. Flag anyone who might not want public recognition — the owner decides before anything is posted.

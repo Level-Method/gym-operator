@@ -28,7 +28,7 @@ Two sentences, your own words:
 
 > Where do you want your gym's files to live? Best is a shared drive — Google Drive, Dropbox, OneDrive — so your team can read them and any AI you use can reach them. A folder on this computer works fine to start.
 
-Create `gym-operations-kb/` there with `gym/`, `gym/operations/`, `work/content/`, `work/members/`, `work/projects/`, `work/reviews/`, `sources/`. Then record the absolute path in both places SKILL.md names: the **Knowledge base location** line in the installed SKILL.md (replace `NOT YET SET` with the path), AND the platform's instructions or memory as backup. One line to the owner: *"Done. That folder is yours — plain files, works with any AI, your team can read it."*
+Create `gym-operations-kb/` there with `assets/`, `gym/`, `gym/operations/`, `work/content/`, `work/members/`, `work/projects/`, `work/reviews/`, `sources/`. Then record the absolute path in both places SKILL.md names: the **Knowledge base location** line in the installed SKILL.md (replace `NOT YET SET` with the path), AND the platform's instructions or memory as backup. One line to the owner: *"Done. That folder is yours — plain files, works with any AI, your team can read it."*
 
 ## Step 3 — Collect the inputs
 
@@ -38,8 +38,9 @@ One at a time, each optional:
 2. "Social accounts you actively post on — links are perfect."
 3. "Used ChatGPT a while? Export your history (Settings → Data controls → Export) and I'll mine it."
 4. "What software runs your gym — and can you export attendance or membership numbers, names stripped?"
+5. "Where do your logo, gym photos, and templates live — a shared drive, a folder somewhere? Link me to it, or drop files in; either works. I'll assume anything you give me is cleared for marketing use — just tell me if someone's off-limits."
 
-Everything lands in `sources/`, untouched.
+Documents and exports land in `sources/`, untouched. Asset locations get mapped in `assets/assets.md` (files the owner hands over directly go in `assets/`).
 
 ## Step 4 — Draft everything the sources can answer
 
@@ -75,6 +76,7 @@ Write to THEIR knowledge base:
 
 - Every `gym/` page there's real material for — drafted pages corrected per Step 4, `gym/goals.md` and `gym/rhythm.md` from Step 5.
 - A `work/projects/<name>/` folder for each live event named, with a one-paragraph brief.
+- `assets/assets.md` — the asset map, from whatever input 5 produced. If assets were skipped, a stub plus a checklist item ("Where do your logo and photos live? Fills assets/assets.md — needed before I can pair photos with posts").
 - `checklist.md` — seeded with the standard Part 2 questions (below) plus anything skipped from Part 1, each with the page it fills and one line on why it matters.
 - `index.md` — everything listed, including pages not yet written.
 - `log.md` — first entry: knowledge base created, date, built from what.

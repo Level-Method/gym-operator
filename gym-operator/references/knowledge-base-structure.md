@@ -16,12 +16,17 @@ This file is the spec. The knowledge base itself does not exist until onboarding
 ├── index.md          ← catalog of everything, one line each
 ├── log.md            ← append-only: corrections, decisions, changes
 ├── checklist.md      ← open questions — skipped during onboarding, answer anytime
+├── assets/           ← EVERGREEN files — brand & reusable media
+│   ├── assets.md     ← the map: every asset, where it lives (here or elsewhere)
+│   ├── brand/        ← logo, colors, fonts
+│   ├── photos/       ← gym, coaches, owner, members
+│   └── templates/    ← presentation, flyer, and document templates
 ├── gym/              ← EVERGREEN — how the gym operates, long-term
 │   └── operations/   ← SOPs: one page per process
 ├── work/             ← CHANGING — outputs of work, by area
-│   ├── content/      ← social + website drafts, content calendars
+│   ├── content/      ← social + website drafts, content calendars (+ assets/)
 │   ├── members/      ← member-management work: check-ins, at-risk lists, follow-up prep
-│   ├── projects/     ← one folder per project or event
+│   ├── projects/     ← one folder per project or event (+ assets/)
 │   └── reviews/      ← dated weekly reviews
 └── sources/          ← raw material dropped in — read, never edited
 ```
@@ -31,6 +36,8 @@ This file is the spec. The knowledge base itself does not exist until onboarding
 **`gym/`** — evergreen knowledge you compile and maintain: what the gym is, how it operates, its SOPs. This layer changes rarely and is kept curated. A source might be forty pages; the page you write from it might be nine lines. Compile, don't store.
 
 **`work/`** — the changing layer. Everything the operator produces that lives for a while and then expires or gets archived: content drafts, member-management runs, project and event folders, dated weekly reviews. `gym/` stays evergreen precisely because day-to-day output goes here instead.
+
+**`assets/`** — the evergreen files: logo and brand, photos of the gym, coaches, owner, and members, reusable templates. Unlike `gym/` pages these aren't compiled knowledge — they're the actual files (or pointers to them; see below). Assets tied to one piece of work — an event flyer, this batch's photos — live with that work instead: `work/projects/<name>/assets/` or `work/content/assets/`, so they archive with it.
 
 **`index.md` + `log.md` + `checklist.md`** — navigation, history, and the open questions. The index tells anyone what exists in thirty seconds. The log is why the operator gets better: read it before every job so a corrected mistake is never repeated. The checklist holds what the owner skipped — each item names the question, the page it fills, and why it matters; unlike the log it is editable, and items get checked off with a date when answered. Raise at most one checklist item per session, only when relevant to the work at hand.
 
@@ -58,7 +65,13 @@ This file is the spec. The knowledge base itself does not exist until onboarding
 - **Prune-able by design:** `work/` may be cleaned up during the health check; `gym/` and `log.md` are not pruned.
 - If a piece of work reveals a stable fact about the gym, the fact is written to `gym/` and logged — the work file is not the system of record.
 
-## Page format
+## Assets
+
+**`assets/assets.md` is the map, and the only file that must exist.** One line per asset or group: what it is, and where it lives. "Where" can be a path inside `assets/` — for owners who want everything in one place — or an external location the owner already uses: *"coach headshots — Google Drive → Gym Photos/Staff"*. Never make the owner reorganize an existing photo library; mapping it is enough. Copy files in only when they ask.
+
+- **Use is assumed.** Anything in `assets/` or mapped in `assets.md` is cleared for marketing use — gym waivers routinely cover photo use, and the owner put it here on purpose. Don't ask permission per use. The owner can mark exceptions in the manifest (*"don't post: …"*); respect those without discussion.
+- **When a job needs an asset** (a photo for a post, the logo for a flyer), check the manifest first. Suggest the specific asset by name; only label something "needs a photo" when the manifest genuinely has nothing.
+- **New evergreen assets** (a fresh logo, this season's coach photos) get filed or mapped, and `assets.md` updated. Work-specific assets go in that work's `assets/` folder and don't need a manifest line.
 
 Every `gym/` page starts with:
 
@@ -92,6 +105,8 @@ The links are what make the knowledge base a connected web instead of a pile of 
 | A decision the owner made | `log.md` |
 | How a process works | `gym/operations/<process>.md` |
 | Raw material | `sources/` — untouched |
+| An evergreen asset — logo, gym/coach/member photos, a template | `assets/` (or mapped from its external home) + a line in `assets/assets.md` |
+| An asset for one project or content batch | that folder's `assets/` — e.g. `work/projects/<name>/assets/` |
 | Content drafted (social, website, email) | `work/content/` |
 | A member-management run (check-ins, at-risk, follow-up prep) | `work/members/` |
 | Anything for a project or event | `work/projects/<name>/` |

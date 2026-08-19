@@ -2,6 +2,12 @@
 
 After the owner pulls an update: read this file, tell them what's new in **two lines**, and offer exactly **one** new capability tied to their gym. Not a feature tour.
 
+## 2026-08-19 — assets
+
+- New `assets/` layer: logo, gym/coach/member photos, and templates — copied in, or mapped from wherever they already live via `assets/assets.md`
+- Content, promo, and recognition jobs now pair drafts with specific photos from the map; use is assumed (waivers cover it), with off-limits marks the only gate
+- Onboarding asks one new optional question: where your logo and photos live
+
 ## 2026-08-18 — public release
 
 - Role-aware operation: a coach or front-desk person can use the operator inside their lane per `gym/team.md`; everything else routes to the owner

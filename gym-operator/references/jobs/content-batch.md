@@ -4,7 +4,7 @@ A week (or month) of content in the gym's actual voice, ready for the owner to p
 
 ## Before starting
 
-Read `gym/voice.md`, `gym/offers.md`, `gym/rhythm.md`, `gym/goals.md`, `log.md`, and recent files in `work/content/` so nothing repeats.
+Read `gym/voice.md`, `gym/offers.md`, `gym/rhythm.md`, `gym/goals.md`, `assets/assets.md`, `log.md`, and recent files in `work/content/` so nothing repeats.
 
 ## Needs
 
@@ -19,7 +19,8 @@ The channels and cadence (from rhythm) · anything worth promoting right now —
 3. Tie promo pieces to live `work/projects/` and real dates.
 4. Check every draft against the never-say list in `gym/voice.md`; flag near-misses instead of silently shipping them.
 5. For the piece that matters most, offer two variants — on-voice, and one notch bolder.
-6. Label anything that needs a photo, a member's permission, or a fact only the owner knows.
+6. Pair each piece with a specific asset from `assets/assets.md` where one fits — a gym shot, a coach photo, the logo. Anything in the map is cleared to use unless it's marked off-limits.
+7. Label anything still needing a photo the map doesn't have, or a fact only the owner knows. Photos gathered for this batch go in `work/content/assets/`.
 
 ## Output
 
