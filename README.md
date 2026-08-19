@@ -86,6 +86,16 @@ Tell your agent:
 
 The agent should: note the current "Knowledge base location" line in the installed `SKILL.md`, download the latest files the same way as install, copy them over the installed folder, and **re-set the location line** in the new `SKILL.md`. Your knowledge base itself is never touched by updates. On the next session, the operator reads `CHANGELOG.md` and tells you what's new in two lines — and offers one new capability tied to your gym.
 
+## Browsing your knowledge base like a wiki
+
+Your knowledge base is plain markdown, so you can read it anywhere — but it's much nicer in [Obsidian](https://obsidian.md), a free app (Mac, Windows, Linux, iPhone, Android) that turns a folder of markdown files into a clickable wiki:
+
+1. Download Obsidian from [obsidian.md](https://obsidian.md/download) and open it.
+2. Choose **Open folder as vault** (on the vault picker, or via the vault switcher at the bottom-left) and select your `gym-operations-kb` folder.
+3. That's it. Every page renders cleanly, the `[[double-bracket]]` links between pages become clickable, and the graph view shows how your gym's knowledge connects.
+
+Because the vault is just your folder, there's no sync or export step — the operator writes a page, and it's there the next time you look. Your coaches can do the same on their own machines if the knowledge base lives on a shared drive. (If Obsidian prompts about trusting the vault or restricted mode, accepting the safe defaults is fine — the knowledge base uses no plugins.)
+
 ## What's in this repo
 
 ```
