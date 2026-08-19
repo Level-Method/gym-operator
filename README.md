@@ -75,7 +75,7 @@ If you are an AI agent installing this skill for a gym owner:
 
    The downloaded archive can be deleted after copying — the installed folder is the skill.
 
-3. **Read the installed `SKILL.md`** and follow it. For a new owner, that means running the onboarding in `references/onboarding.md` — it creates the knowledge base at a location the owner chooses, then **writes that path into the installed `SKILL.md`** (the "Knowledge base location" line) and into your platform's memory/instructions, so every future session finds it without asking.
+3. **Read the installed `SKILL.md`** and follow it. For a new owner, that means running the onboarding in `references/onboarding.md` — it creates the knowledge base at a location the owner chooses, then records that path in **`kb-location.md`** inside the installed skill folder, and in your platform's memory/instructions, so every future session finds it without asking.
 
 4. **Confirm to the owner** what was installed and where, then begin onboarding.
 
@@ -100,7 +100,7 @@ Your knowledge base itself is never touched by updates. On the next session, the
 Your knowledge base is plain markdown, so you can read it anywhere — but it's much nicer in [Obsidian](https://obsidian.md), a free app (Mac, Windows, Linux, iPhone, Android) that turns a folder of markdown files into a clickable wiki:
 
 1. Download Obsidian from [obsidian.md](https://obsidian.md/download) and open it.
-2. Choose **Open folder as vault** (on the vault picker, or via the vault switcher at the bottom-left) and select your `gym-operations-kb` folder.
+2. Choose **Open folder as vault** (on the vault picker, or via the vault switcher at the bottom-left) and select your `Gym Operations` folder.
 3. That's it. Every page renders cleanly, the `[[double-bracket]]` links between pages become clickable, and the graph view shows how your gym's knowledge connects.
 
 Because the vault is just your folder, there's no sync or export step — the operator writes a page, and it's there the next time you look. Your coaches can do the same on their own machines if the knowledge base lives on a shared drive. (If Obsidian prompts about trusting the vault or restricted mode, accepting the safe defaults is fine — the knowledge base uses no plugins.)

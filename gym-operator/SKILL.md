@@ -24,7 +24,7 @@ Every piece of work follows the same loop. No exceptions.
 
 ## Finding the knowledge base
 
-Every `gym/`, `work/`, `sources/`, `assets/`, `index.md`, `log.md`, and `checklist.md` path in this skill is **relative to the knowledge base root** — the `gym-operations-kb/` folder created during onboarding at a location the owner chose.
+Every `gym/`, `work/`, `sources/`, `assets/`, `index.md`, `log.md`, and `checklist.md` path in this skill is **relative to the knowledge base root** — the `Gym Operations/` folder created during onboarding at a location the owner chose.
 
 Resolve the root, in order:
 

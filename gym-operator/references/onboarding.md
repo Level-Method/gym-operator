@@ -39,7 +39,7 @@ Look for it:
 
 Found it? Create the knowledge base in `My Drive` and report it as **done** — this is a statement, not a question:
 
-> Your gym's files are set up in **Google Drive → My Drive → gym-operations-kb**. They're backed up, your coaches can open them, and any AI you use can read them. (Want them somewhere else? Say so and I'll move them — it takes one second.)
+> Your gym's files are set up in **Google Drive → My Drive → Gym Operations**. They're backed up, your coaches can open them, and any AI you use can read them. (Want them somewhere else? Say so and I'll move them — it takes one second.)
 
 If two Google accounts are signed in, name them and ask which one is the gym's. That is the only question this step may ask when Drive is present.
 
@@ -55,7 +55,7 @@ Recommend it with the exact steps. Never send them off to research it, and never
 >
 > Or if you'd rather not bother right now, say **"just use my computer"** — I'll set it up here in ten seconds, and we can move it into Drive whenever you want. Nothing is lost either way.
 
-If they install it, re-run the detection in A. If they opt out, use `~/Documents/gym-operations-kb/` and add a checklist item: *"Move the knowledge base into Google Drive — it's how your coaches get access."* Never repeat the Drive pitch after they've declined once.
+If they install it, re-run the detection in A. If they opt out, use `~/Documents/Gym Operations/` and add a checklist item: *"Move the knowledge base into Google Drive — it's how your coaches get access."* Never repeat the Drive pitch after they've declined once.
 
 ### C — They want something else
 
@@ -63,7 +63,7 @@ Dropbox, OneDrive, iCloud, a specific folder: find it the same way (`~/Dropbox`,
 
 ### Then, always
 
-Create `gym-operations-kb/` with `assets/`, `gym/`, `gym/operations/`, `work/content/`, `work/members/`, `work/projects/`, `work/reviews/`, `sources/`.
+Create `Gym Operations/` with `assets/`, `gym/`, `gym/operations/`, `work/content/`, `work/members/`, `work/projects/`, `work/reviews/`, `sources/`.
 
 Then record the absolute path in both places SKILL.md names:
 
@@ -72,12 +72,21 @@ Then record the absolute path in both places SKILL.md names:
 
 Never write the path into `SKILL.md` itself. An update overwrites that file, and the owner silently loses track of their knowledge base.
 
+### Telling them where it went
+
+Say it the way a person would, and **open the folder for them** — `open <path>` on macOS, `explorer <path>` on Windows. A path with a `~` in it is notation, not a location; most owners have never seen one.
+
+> Your files are in your **Documents** folder, in **Gym Operations**. I've just opened it for you.
+
+Never: *"created at `~/Documents/Gym Operations/`."* That sentence is why an owner later can't find their own knowledge base.
+
 ### You've gone wrong if
 
 - You asked "where do you want your files?" as an open question
 - The owner had to type, paste, or understand a file path
 - Setup stalled because they didn't want to install something
 - You pitched Google Drive twice
+- You reported the location as a path instead of a place, or didn't open it for them
 
 ## Step 3 — Ask for the website. That's all.
 
