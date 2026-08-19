@@ -37,36 +37,38 @@ Plus: a welcome-back brief every session (it knows what week it is and what's co
 
 If you are an AI agent installing this skill for a gym owner:
 
-1. **Get the files.** Clone this repo, or download it as a zip and extract:
+1. **Get the files.** No git required — download and extract the repo:
 
    ```bash
-   git clone https://github.com/Level-Method/gym-operator.git
+   curl -L https://github.com/Level-Method/gym-operator/archive/refs/heads/main.tar.gz | tar xz
    ```
 
-2. **Install the `gym-operator/` folder** (the one containing `SKILL.md`) into your platform's skills location:
-   - **Claude Code (personal):** `~/.claude/skills/gym-operator/`
-   - **Claude Code (this project only):** `<project>/.claude/skills/gym-operator/`
-   - **Other platforms:** wherever your platform loads skills/instructions from; if it has no skills system, keep the folder anywhere and load `SKILL.md` at the start of each session.
+   (`git clone https://github.com/Level-Method/gym-operator.git` works too, if git is available.)
+
+2. **Copy the `gym-operator/` folder** (the one containing `SKILL.md`) into your platform's skills location:
+   - **Claude Code (personal, all projects):** `~/.claude/skills/gym-operator/`
+   - **Claude Code (one project):** `<project>/.claude/skills/gym-operator/`
+   - **Cursor / Codex / other agents:** wherever your platform loads skills or custom instructions from; if it has no skills system, keep the folder anywhere the owner can point you at and read `SKILL.md` at the start of each session.
 
    Example for Claude Code:
 
    ```bash
-   cp -R gym-operator/gym-operator ~/.claude/skills/gym-operator
+   cp -R gym-operator-main/gym-operator ~/.claude/skills/gym-operator
    ```
 
-   Keeping the clone and copying from it (or symlinking it) makes updates a `git pull` later.
+   The downloaded archive can be deleted after copying — the installed folder is the skill.
 
-3. **Read `SKILL.md`** and follow it. For a new owner, that means running the onboarding in `references/onboarding.md` — it creates the knowledge base at a location the owner chooses and records that path durably (in your platform's memory/instructions AND in `kb-location.md` next to `SKILL.md`) so every future session finds it without asking.
+3. **Read the installed `SKILL.md`** and follow it. For a new owner, that means running the onboarding in `references/onboarding.md` — it creates the knowledge base at a location the owner chooses, then **writes that path into the installed `SKILL.md`** (the "Knowledge base location" line) and into your platform's memory/instructions, so every future session finds it without asking.
 
 4. **Confirm to the owner** what was installed and where, then begin onboarding.
 
 ## Updating
 
-```bash
-cd gym-operator && git pull
-```
+Tell your agent:
 
-Then copy the updated files over your installed skill (or nothing to do if you symlinked). Your `kb-location.md` and your knowledge base are never touched by updates. On the next session, the operator reads `CHANGELOG.md` and tells you what's new in two lines — and offers one new capability tied to your gym.
+> Update my Gym Operator skill from https://github.com/Level-Method/gym-operator
+
+The agent should: note the current "Knowledge base location" line in the installed `SKILL.md`, download the latest files the same way as install, copy them over the installed folder, and **re-set the location line** in the new `SKILL.md`. Your knowledge base itself is never touched by updates. On the next session, the operator reads `CHANGELOG.md` and tells you what's new in two lines — and offers one new capability tied to your gym.
 
 ## What's in this repo
 

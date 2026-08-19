@@ -5,7 +5,7 @@ After the owner pulls an update: read this file, tell them what's new in **two l
 ## 2026-08-18 — public release
 
 - Role-aware operation: a coach or front-desk person can use the operator inside their lane per `gym/team.md`; everything else routes to the owner
-- Knowledge-base location now recorded durably at setup (`kb-location.md` + platform memory) so updates and new sessions never lose track of the owner's files
+- Knowledge-base location now recorded durably at setup (written into the installed SKILL.md + platform memory) so new sessions never lose track of the owner's files
 - Public repo, README install flow for any AI agent
 
 ## 2026-08-18 — the job library + the feel pass

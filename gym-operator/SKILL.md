@@ -24,13 +24,17 @@ Every piece of work follows the same loop. No exceptions.
 
 ## Finding the knowledge base
 
-Every `gym/`, `work/`, `sources/`, `index.md`, `log.md`, and `checklist.md` path in this skill is **relative to the knowledge base root** — the `gym-operations-kb/` folder created during onboarding at a location the owner chose. Resolve that root, in order:
+Every `gym/`, `work/`, `sources/`, `index.md`, `log.md`, and `checklist.md` path in this skill is **relative to the knowledge base root** — the `gym-operations-kb/` folder created during onboarding at a location the owner chose.
 
-1. **Platform memory or project instructions** — CLAUDE.md, AGENTS.md, project instructions, or persistent memory, whichever this platform has.
-2. **`kb-location.md` next to this SKILL.md** — a single line containing the absolute path. This file is created during onboarding, is listed in the repo's `.gitignore`, and survives skill updates (`git pull` never touches it).
-3. **Neither exists** — ask the owner once, then record the answer in BOTH places above so no future session has to ask. If no knowledge base exists at all, that's a new owner: run onboarding.
+**Knowledge base location:** `NOT YET SET — onboarding fills this in`
 
-`kb-location.md` is the one exception to the one law: it holds a path, nothing else. No other gym information ever goes in the skill folder.
+Resolve the root, in order:
+
+1. **The location line above.** At the end of onboarding Step 2, edit this installed SKILL.md and replace the value with the absolute path. This line is the one gym-specific fact allowed in the skill: a path, nothing else.
+2. **Platform memory or project instructions** — CLAUDE.md, AGENTS.md, project instructions, or persistent memory — where onboarding also records it as a backup.
+3. **Neither is set** — ask the owner once, then record it in both places so no future session has to ask. If no knowledge base exists at all, that's a new owner: run onboarding.
+
+When installing a newer version of this skill over an existing install, carry the location line forward: copy the new files, then re-set the path on this line.
 
 ## Session start — the welcome-back brief
 

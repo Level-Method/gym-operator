@@ -28,7 +28,7 @@ Two sentences, your own words:
 
 > Where do you want your gym's files to live? Best is a shared drive — Google Drive, Dropbox, OneDrive — so your team can read them and any AI you use can reach them. A folder on this computer works fine to start.
 
-Create `gym-operations-kb/` there with `gym/`, `gym/operations/`, `work/content/`, `work/members/`, `work/projects/`, `work/reviews/`, `sources/`. Then record the absolute path in both places SKILL.md names: the platform's instructions or memory, AND `kb-location.md` next to SKILL.md (one line, the path, nothing else). One line to the owner: *"Done. That folder is yours — plain files, works with any AI, your team can read it."*
+Create `gym-operations-kb/` there with `gym/`, `gym/operations/`, `work/content/`, `work/members/`, `work/projects/`, `work/reviews/`, `sources/`. Then record the absolute path in both places SKILL.md names: the **Knowledge base location** line in the installed SKILL.md (replace `NOT YET SET` with the path), AND the platform's instructions or memory as backup. One line to the owner: *"Done. That folder is yours — plain files, works with any AI, your team can read it."*
 
 ## Step 3 — Collect the inputs
 
