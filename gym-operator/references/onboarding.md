@@ -120,6 +120,22 @@ Fold their reply in. Only re-present what they corrected.
 
 With no sources at all, skip to Step 5 and ask identity there as a fourth question.
 
+### If what you read isn't a gym
+
+Owners paste the wrong thing: a franchise's corporate site, a software or supplier company, a personal-brand coaching page, a typo. **Say so before you write anything.** Never reshape a non-gym into a gym to keep the script moving — every page you wrote would be invented, and Step 6 would file the invention as fact.
+
+> That's [what it actually is] rather than a gym itself. Want me to build this around [business], or point me at your gym's site instead?
+
+Write no `gym/` pages until that's settled. If they do want the non-gym business, the knowledge base still works — but say up front which jobs won't apply (anything built on members, classes, or level-ups) instead of letting them find out three weeks in.
+
+### When the socials won't open
+
+Facebook pages are usually login-walled and return nothing. Instagram will often give you the bio and the gist of recent posts, but not full captions. **Don't claim to have read what you couldn't**, and don't let it quietly thin out `gym/voice.md` — voice is the page that makes every draft sound like them.
+
+Build voice from the website copy, mark it `confidence: medium`, and make one small ask at the end of the recap — a paste, never an export:
+
+> One thing that'd sharpen this fast: paste me your last two or three posts. Your website shows me how you write when you're selling; your posts show me how you actually sound.
+
 ## Step 5 — The questions only they can answer
 
 Three, one at a time:
