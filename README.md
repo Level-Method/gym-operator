@@ -64,6 +64,7 @@ If you are an AI agent installing this skill for a gym owner:
 2. **Copy the `gym-operator/` folder** (the one containing `SKILL.md`) into your platform's skills location:
    - **Claude Code (personal, all projects):** `~/.claude/skills/gym-operator/`
    - **Claude Code (one project):** `<project>/.claude/skills/gym-operator/`
+   - **Claude Desktop / claude.ai (no shell access):** the owner uploads the `gym-operator` folder as a skill under **Settings → Capabilities** instead of copying files.
    - **Cursor / Codex / other agents:** wherever your platform loads skills or custom instructions from; if it has no skills system, keep the folder anywhere the owner can point you at and read `SKILL.md` at the start of each session.
 
    Example for Claude Code:
@@ -84,7 +85,13 @@ Tell your agent:
 
 > Update my Gym Operator skill from https://github.com/Level-Method/gym-operator
 
-The agent should: note the current "Knowledge base location" line in the installed `SKILL.md`, download the latest files the same way as install, copy them over the installed folder, and **re-set the location line** in the new `SKILL.md`. Your knowledge base itself is never touched by updates. On the next session, the operator reads `CHANGELOG.md` and tells you what's new in two lines — and offers one new capability tied to your gym.
+The agent should: note the current "Knowledge base location" line in the installed `SKILL.md`, download the latest files the same way as install, copy them over the installed folder, and **re-set the location line** in the new `SKILL.md`. When copying over an existing install, keep the trailing slashes — without them `cp` nests the new folder *inside* the old install instead of replacing its contents:
+
+```bash
+cp -R gym-operator-main/gym-operator/ ~/.claude/skills/gym-operator/
+```
+
+Your knowledge base itself is never touched by updates. On the next session, the operator reads `CHANGELOG.md` and tells you what's new in two lines — and offers one new capability tied to your gym.
 
 ## Browsing your knowledge base like a wiki
 

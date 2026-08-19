@@ -91,7 +91,7 @@ If you can't write files at their location, give complete file contents and exac
 
 > Now let's make it earn its keep. What should we run first?
 
-Offer choices from what THEY said — "you mentioned the fall challenge; want me to prep the promo plan?" Fall back to at most three: weekly review, meeting notes → decisions, lead follow-up prep.
+Offer choices from what THEY said — "you mentioned the fall challenge; want me to prep the promo plan?" Fall back to at most three: weekly review, content batch, lead follow-up prep.
 
 No data on hand is never a blocker — every job has a minimum viable input. For the review it's "talk your week at me for sixty seconds."
 
