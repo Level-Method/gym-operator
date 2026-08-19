@@ -72,17 +72,39 @@ Create `gym-operations-kb/` with `assets/`, `gym/`, `gym/operations/`, `work/con
 - Setup stalled because they didn't want to install something
 - You pitched Google Drive twice
 
-## Step 3 — Collect the inputs
+## Step 3 — Ask for the website. That's all.
 
-One at a time, each optional:
+**One question, not five.**
 
-1. "What's your gym's website address?"
-2. "Social accounts you actively post on — links are perfect."
-3. "Used ChatGPT a while? Export your history (Settings → Data controls → Export) and I'll mine it."
-4. "What software runs your gym — and can you export attendance or membership numbers, names stripped?"
-5. "Where do your logo, gym photos, and templates live — a shared drive, a folder somewhere? Link me to it, or drop files in; either works. I'll assume anything you give me is cleared for marketing use — just tell me if someone's off-limits."
+> What's your gym's website?
 
-Documents and exports land in `sources/`, untouched. Asset locations get mapped in `assets/assets.md` (files the owner hands over directly go in `assets/`).
+Then go read it — and read what it links to. A gym's Instagram and Facebook are almost always linked from its own site, so **find them yourself instead of asking**. Follow them and read the recent posts.
+
+That one answer usually gives you identity, offers, voice, schedule, location, and whatever they're promoting right now — enough to draft the entire first pass.
+
+**No website?**
+
+> No problem — what's your gym's Instagram or Facebook?
+
+Neither of those either? Say so plainly, move to Step 5, and ask identity there as a fourth question.
+
+### The other inputs come later, never upfront
+
+ChatGPT exports, gym-software reports, and photo libraries all make the operator better, and **none of them belong in the first ten minutes**. Nobody should be asked to go export data before they've seen the thing work once.
+
+Seed them into `checklist.md` at Step 6 in plain language, then raise **at most one**, later, and only when a job would visibly have been better with it:
+
+| Checklist item | Raise it when |
+|---|---|
+| "Where do your logo and photos live? A link to the folder is plenty." | The first content batch has a post with no image to pair |
+| "Can your gym software export attendance, with names stripped?" | The first time they ask who's gone quiet |
+| "Used ChatGPT for gym stuff? Its history exports, and I'll mine it." | Only if they mention using it |
+
+Never explain how to run an export unprompted. When they ask, give the exact clicks and nothing else.
+
+### If they hand you something anyway
+
+Documents and exports land in `sources/`, untouched. Photo locations get mapped in `assets/assets.md`; files handed over directly go in `assets/`. Use is assumed per the Assets rules — say it once, plainly: *"I'll treat anything you give me as cleared for marketing; just tell me if someone's off-limits."*
 
 ## Step 4 — Draft everything the sources can answer
 
@@ -118,7 +140,7 @@ Write to THEIR knowledge base:
 
 - Every `gym/` page there's real material for — drafted pages corrected per Step 4, `gym/goals.md` and `gym/rhythm.md` from Step 5.
 - A `work/projects/<name>/` folder for each live event named, with a one-paragraph brief.
-- `assets/assets.md` — the asset map, from whatever input 5 produced. If assets were skipped, a stub plus a checklist item ("Where do your logo and photos live? Fills assets/assets.md — needed before I can pair photos with posts").
+- `assets/assets.md` — a stub, plus the checklist item for where their logo and photos live ("Fills assets/assets.md — needed before I can pair photos with posts"). If they volunteered locations unprompted, map those instead.
 - `checklist.md` — seeded with the standard Part 2 questions (below) plus anything skipped from Part 1, each with the page it fills and one line on why it matters.
 - `index.md` — everything listed, including pages not yet written.
 - `log.md` — first entry: knowledge base created, date, built from what.
