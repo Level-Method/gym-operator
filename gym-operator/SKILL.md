@@ -29,7 +29,7 @@ Every `gym/`, `work/`, `sources/`, `assets/`, `index.md`, `log.md`, and `checkli
 Resolve the root, in order:
 
 1. **`kb-location.md`, in this skill's folder.** Onboarding creates it and writes the absolute path into it. It ships with no version of this skill, so copying a newer version over this folder cannot overwrite it — that is exactly why the path lives there and not in a line of this file.
-2. **Platform memory or project instructions** — CLAUDE.md, AGENTS.md, project instructions, or persistent memory — where onboarding records the path as a backup.
+2. **Platform memory or project instructions** — CLAUDE.md, AGENTS.md, project instructions, or persistent memory — where onboarding records the path as a backup. On platforms where the installed skill is read-only (claude.ai / Cowork, where skills are uploaded through the UI), `kb-location.md` can't be created — memory is the primary record there.
 3. **A "Knowledge base location" line in this file.** Installs from before `kb-location.md` existed kept the path here. If you find one, move it into `kb-location.md` and carry on.
 4. **None of the above** — ask the owner once, then record it in the first two so no future session has to ask. If no knowledge base exists at all, that's a new owner: run onboarding.
 

@@ -22,7 +22,7 @@ The basics: what, when, who it's for, price, cap. From the project brief or the 
 
 ## Output
 
-A dated promo plan + all drafts inside `work/projects/<event>/`. The owner approves and posts on the timeline; nothing is scheduled or sent by the operator.
+A dated promo plan + all drafts inside `work/projects/<event>/`, filenames prefixed with the event (`fall-throwdown-promo-plan.md`, never `plan.md`). The owner approves and posts on the timeline; nothing is scheduled or sent by the operator.
 
 ## Never
 

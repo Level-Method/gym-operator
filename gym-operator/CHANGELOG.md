@@ -2,6 +2,12 @@
 
 After the owner pulls an update: read this file, tell them what's new in **two lines**, and offer exactly **one** new capability tied to their gym. Not a feature tour.
 
+## 2026-08-19 — install paths + naming
+
+- Every knowledge-base file is named to stand alone — `fall-throwdown-brief.md`, never `brief.md` — so graph and knowledge-map views read clearly
+- Works when installed through the claude.ai / Cowork skill upload (where the skill file is read-only): the knowledge-base location is kept in platform memory instead
+- README: desktop-app prerequisites, Google Drive desktop sync, and a no-terminal install via the release zip
+
 ## 2026-08-19 — assets
 
 - New `assets/` layer: logo, gym/coach/member photos, and templates — copied in, or mapped from wherever they already live via `assets/assets.md`

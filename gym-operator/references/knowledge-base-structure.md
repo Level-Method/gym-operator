@@ -60,6 +60,7 @@ This file is the spec. The knowledge base itself does not exist until onboarding
 ## The working layer — rules
 
 - **Evergreen vs changing:** if it describes how the gym operates, it belongs in `gym/`. If it is an output of work — a draft, a plan, a run of a job — it belongs in `work/`.
+- **Name every file to stand alone.** In graph, search, and knowledge-map views only the filename shows — so the name must say what it is AND what it belongs to: `fall-throwdown-brief.md`, never `brief.md`; `fall-throwdown-promo-plan.md`, never `plan.md`. Never reuse a generic filename across folders.
 - **Date what recurs:** `work/reviews/2026-08-24-weekly-review.md`. A new run never overwrites an old one.
 - **One folder per project:** `work/projects/fall-throwdown/` holds everything for that event. When it ends, move the folder to `work/projects/_archive/`.
 - **Member work is aggregate:** `work/members/` uses IDs and aggregates, never names with sensitive detail, same privacy rules as everywhere else.

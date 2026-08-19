@@ -36,6 +36,7 @@ Look for it:
 
 - **macOS:** `ls ~/Library/CloudStorage/` → `GoogleDrive-<email>/My Drive/` (older installs: `~/Google Drive/`)
 - **Windows:** `G:\My Drive`, or `%USERPROFILE%\Google Drive`
+- **No shell access to the machine** (claude.ai / Cowork): you can't probe — ask the owner to point you at their Google Drive folder, or grant/drag it into the workspace. One ask, then proceed as if found.
 
 Found it? Create the knowledge base in `My Drive` and report it as **done** — this is a statement, not a question:
 
@@ -68,7 +69,7 @@ Create `Gym Operations/` with `assets/`, `gym/`, `gym/operations/`, `work/conten
 Then record the absolute path in both places SKILL.md names:
 
 1. **`kb-location.md`, in the installed skill folder** — create it and put the absolute path in it, one line, nothing else. It isn't part of the download, so future updates copy over the skill without touching it.
-2. **The platform's instructions or memory** — CLAUDE.md, AGENTS.md, or persistent memory — as the backup.
+2. **The platform's instructions or memory** — CLAUDE.md, AGENTS.md, or persistent memory — as the backup. If the skill folder can't be written (claude.ai / Cowork, where skills are uploaded through the UI), memory alone is the record — make sure it's actually persisted, not merely mentioned in chat.
 
 Never write the path into `SKILL.md` itself. An update overwrites that file, and the owner silently loses track of their knowledge base.
 
@@ -185,7 +186,7 @@ Whatever they don't answer goes to the checklist. Safe defaults apply meanwhile:
 Write to THEIR knowledge base:
 
 - Every `gym/` page there's real material for — drafted pages corrected per Step 4, `gym/goals.md` and `gym/rhythm.md` from Step 5.
-- A `work/projects/<name>/` folder for each live event named, with a one-paragraph brief.
+- A `work/projects/<name>/` folder for each live event named, with a one-paragraph brief named `<name>-brief.md` — filenames must stand alone in a graph view, so never a generic `brief.md`.
 - `assets/assets.md` — a stub, plus the checklist item for where their logo and photos live ("Fills assets/assets.md — needed before I can pair photos with posts"). If they volunteered locations unprompted, map those instead.
 - `checklist.md` — seeded with the standard Part 2 questions (below) plus anything skipped from Part 1, each with the page it fills and one line on why it matters.
 - `index.md` — everything listed, including pages not yet written.
