@@ -45,7 +45,7 @@ Plus: a welcome-back brief every session (it knows what week it is and what's co
 
 ## The rules it lives by
 
-- **Your data is yours.** Everything about your gym lives in *your* knowledge base — a folder of plain markdown files at a location you choose (a shared drive is best so your team and any AI platform can read it). The skill contains process only. Delete the skill and your knowledge base still works with any AI, forever.
+- **Your data is yours.** Everything about your gym lives in *your* knowledge base — a folder of plain markdown files, set up in your Google Drive by default so your coaches and any AI platform can read it (somewhere else is fine too; you'll be asked nothing you can't answer). The skill contains process only. Delete the skill and your knowledge base still works with any AI, forever.
 - **It never touches the outside world.** It drafts, preps, analyzes, and recommends. It never sends, posts, publishes, schedules, purchases, or talks to your members. You stay the owner.
 - **It never stores** passwords, payment details, medical/injury info, or member data you don't have permission to share.
 

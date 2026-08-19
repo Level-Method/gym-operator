@@ -4,7 +4,7 @@ This file is the spec. The knowledge base itself does not exist until onboarding
 
 ## Location principles
 
-- **The owner picks where it lives.** Recommend a shared drive (Google Drive, Dropbox, OneDrive) so their team can read it and any AI platform can reach it. A local folder is fine to start; it can move later.
+- **Google Drive by default.** It's the recommendation and the default answer, not a menu item: the team can read it, it backs itself up, and with Google Drive for Desktop it behaves like an ordinary folder. Find it and use it rather than asking the owner to choose — see Step 2 of `onboarding.md`. A folder on their computer is a fine fallback and can move into Drive later.
 - **Plain markdown, no lock-in.** Everything is text files. Claude, Codex, or anything else can be pointed at the same folder.
 - **Written for humans first.** A coach who has never used AI should be able to open an SOP and follow it. The AI is the second reader.
 - Record the location in the project's instructions or memory so every session finds it without asking.

@@ -24,11 +24,53 @@ Two sentences, your own words:
 
 > I'm going to set up your gym's knowledge base — the thing that makes me actually know your gym instead of giving generic advice. Most of it I can figure out myself; you'll only need to answer a handful of things.
 
-## Step 2 — Location
+## Step 2 — Location (Google Drive by default)
 
-> Where do you want your gym's files to live? Best is a shared drive — Google Drive, Dropbox, OneDrive — so your team can read them and any AI you use can reach them. A folder on this computer works fine to start.
+**Google Drive is the recommendation, and the owner shouldn't have to decide anything to get it.** Their coaches can open it, it backs itself up, and with Google Drive for Desktop it behaves like an ordinary folder — so Obsidian, this skill, and any other AI read it with no special setup.
 
-Create `gym-operations-kb/` there with `assets/`, `gym/`, `gym/operations/`, `work/content/`, `work/members/`, `work/projects/`, `work/reviews/`, `sources/`. Then record the absolute path in both places SKILL.md names: the **Knowledge base location** line in the installed SKILL.md (replace `NOT YET SET` with the path), AND the platform's instructions or memory as backup. One line to the owner: *"Done. That folder is yours — plain files, works with any AI, your team can read it."*
+Two rules for this whole step: **look before you ask**, and **never make the owner type, paste, or explain a file path.** "Where do you want your files?" is not a question a gym owner can answer well. Find it yourself, do it, and tell them it's done.
+
+### A — Google Drive is already on the machine
+
+Look for it:
+
+- **macOS:** `ls ~/Library/CloudStorage/` → `GoogleDrive-<email>/My Drive/` (older installs: `~/Google Drive/`)
+- **Windows:** `G:\My Drive`, or `%USERPROFILE%\Google Drive`
+
+Found it? Create the knowledge base in `My Drive` and report it as **done** — this is a statement, not a question:
+
+> Your gym's files are set up in **Google Drive → My Drive → gym-operations-kb**. They're backed up, your coaches can open them, and any AI you use can read them. (Want them somewhere else? Say so and I'll move them — it takes one second.)
+
+If two Google accounts are signed in, name them and ask which one is the gym's. That is the only question this step may ask when Drive is present.
+
+### B — Google Drive is not on the machine
+
+Recommend it with the exact steps. Never send them off to research it, and never let setup stall on it:
+
+> I'd put these in Google Drive so your coaches can read them and they're backed up automatically. Three minutes:
+>
+> 1. Download Google Drive for Desktop: https://www.google.com/drive/download/
+> 2. Open it and sign in with the Google account you use for the gym
+> 3. Say "done" and I'll do the rest
+>
+> Or if you'd rather not bother right now, say **"just use my computer"** — I'll set it up here in ten seconds, and we can move it into Drive whenever you want. Nothing is lost either way.
+
+If they install it, re-run the detection in A. If they opt out, use `~/Documents/gym-operations-kb/` and add a checklist item: *"Move the knowledge base into Google Drive — it's how your coaches get access."* Never repeat the Drive pitch after they've declined once.
+
+### C — They want something else
+
+Dropbox, OneDrive, iCloud, a specific folder: find it the same way (`~/Dropbox`, `~/OneDrive*`, `~/Library/Mobile Documents/`). If you genuinely can't locate it, ask them to open the folder and drag it into the chat — not to type its path.
+
+### Then, always
+
+Create `gym-operations-kb/` with `assets/`, `gym/`, `gym/operations/`, `work/content/`, `work/members/`, `work/projects/`, `work/reviews/`, `sources/`. Record the absolute path in both places SKILL.md names: the **Knowledge base location** line in the installed SKILL.md (replace `NOT YET SET` with the path), AND the platform's instructions or memory as backup.
+
+### You've gone wrong if
+
+- You asked "where do you want your files?" as an open question
+- The owner had to type, paste, or understand a file path
+- Setup stalled because they didn't want to install something
+- You pitched Google Drive twice
 
 ## Step 3 — Collect the inputs
 
@@ -124,6 +166,7 @@ How it runs:
 ## You've gone wrong if…
 
 - You asked something the sources had already answered
+- You asked the owner where to put their files, or made them type a path
 - You asked the owner to compose what you could have drafted for confirmation
 - Skipping felt like failing, or the checklist felt like homework
 - You presented more than one question at a time
