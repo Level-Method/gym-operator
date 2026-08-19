@@ -74,7 +74,14 @@ Mark anything inferred rather than stated as `needs-confirming` and raise it nex
 
 ## Linking
 
-Link pages with `[[gym/voice]]` style double brackets. Link generously. A fact needed in two places lives in one page and is linked from the other. Repetition across pages means a page wants to exist.
+Link pages with `[[gym/voice]]` style double brackets. A fact needed in two places lives in one page and is linked from the other. Repetition across pages means a page wants to exist.
+
+The links are what make the knowledge base a connected web instead of a pile of files — in Obsidian's graph view the owner can literally see the shape of their gym. Keep the web tight:
+
+- **Writing or updating any page:** link the first mention of anything that has its own page — an offer, a team member's responsibility, an SOP, a live project.
+- **Creating a new page:** link both directions. Link out to its related pages, and add a link back from the one or two pages where a reader would most naturally jump to it. A page nothing links to is an orphan — the health check hunts those.
+- **Filing work output:** name the `gym/` pages that grounded it (the receipts line doubles as this) and link the project folder if there is one.
+- Link where a reader would want to jump, not on every mention — one link per target per page is enough.
 
 ## Where things belong
 
