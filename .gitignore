@@ -1,1 +1,4 @@
 .DS_Store
+
+# Written into an install by onboarding; never part of the published skill
+gym-operator/kb-location.md

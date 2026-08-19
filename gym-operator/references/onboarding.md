@@ -63,7 +63,14 @@ Dropbox, OneDrive, iCloud, a specific folder: find it the same way (`~/Dropbox`,
 
 ### Then, always
 
-Create `gym-operations-kb/` with `assets/`, `gym/`, `gym/operations/`, `work/content/`, `work/members/`, `work/projects/`, `work/reviews/`, `sources/`. Record the absolute path in both places SKILL.md names: the **Knowledge base location** line in the installed SKILL.md (replace `NOT YET SET` with the path), AND the platform's instructions or memory as backup.
+Create `gym-operations-kb/` with `assets/`, `gym/`, `gym/operations/`, `work/content/`, `work/members/`, `work/projects/`, `work/reviews/`, `sources/`.
+
+Then record the absolute path in both places SKILL.md names:
+
+1. **`kb-location.md`, in the installed skill folder** — create it and put the absolute path in it, one line, nothing else. It isn't part of the download, so future updates copy over the skill without touching it.
+2. **The platform's instructions or memory** — CLAUDE.md, AGENTS.md, or persistent memory — as the backup.
+
+Never write the path into `SKILL.md` itself. An update overwrites that file, and the owner silently loses track of their knowledge base.
 
 ### You've gone wrong if
 

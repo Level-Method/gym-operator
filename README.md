@@ -85,7 +85,9 @@ Tell your agent:
 
 > Update my Gym Operator skill from https://github.com/Level-Method/gym-operator
 
-The agent should: note the current "Knowledge base location" line in the installed `SKILL.md`, download the latest files the same way as install, copy them over the installed folder, and **re-set the location line** in the new `SKILL.md`. When copying over an existing install, keep the trailing slashes — without them `cp` nests the new folder *inside* the old install instead of replacing its contents:
+The agent should download the latest files the same way as install and copy them over the installed folder. Where your knowledge base lives is recorded in `kb-location.md`, which isn't part of the download — the copy leaves it alone, so there's nothing to restore afterward. (Installed before that file existed? The path is on a "Knowledge base location" line in the old `SKILL.md` — save it first, then write it into `kb-location.md`.)
+
+When copying over an existing install, keep the trailing slashes — without them `cp` nests the new folder *inside* the old install instead of replacing its contents:
 
 ```bash
 cp -R gym-operator-main/gym-operator/ ~/.claude/skills/gym-operator/
