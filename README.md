@@ -62,7 +62,7 @@ Plus: a welcome-back brief every session (it knows what week it is and what's co
 
 ## The rules it lives by
 
-- **Your data is yours.** Everything about your gym lives in *your* knowledge base — a folder of plain markdown files at a location you choose (a shared drive is best so your team and any AI platform can read it). The skill contains process only. Delete the skill and your knowledge base still works with any AI, forever.
+- **Your data is yours.** Everything about your gym lives in *your* knowledge base — a folder of plain markdown files, set up in your Google Drive by default so your coaches and any AI platform can read it (somewhere else is fine too; you'll be asked nothing you can't answer). The skill contains process only. Delete the skill and your knowledge base still works with any AI, forever.
 - **It never touches the outside world.** It drafts, preps, analyzes, and recommends. It never sends, posts, publishes, schedules, purchases, or talks to your members. You stay the owner.
 - **It never stores** passwords, payment details, medical/injury info, or member data you don't have permission to share.
 
@@ -94,7 +94,7 @@ If you are an AI agent installing this skill for a gym owner:
 
    The downloaded archive can be deleted after copying — the installed folder is the skill.
 
-3. **Read the installed `SKILL.md`** and follow it. For a new owner, that means running the onboarding in `references/onboarding.md` — it creates the knowledge base at a location the owner chooses, then **writes that path into the installed `SKILL.md`** (the "Knowledge base location" line) and into your platform's memory/instructions, so every future session finds it without asking.
+3. **Read the installed `SKILL.md`** and follow it. For a new owner, that means running the onboarding in `references/onboarding.md` — it creates the knowledge base at a location the owner chooses, then records that path in **`kb-location.md`** inside the installed skill folder, and in your platform's memory/instructions, so every future session finds it without asking.
 
 4. **Confirm to the owner** what was installed and where, then begin onboarding.
 
@@ -104,7 +104,9 @@ Tell your agent:
 
 > Update my Gym Operator skill from https://github.com/Level-Method/gym-operator
 
-The agent should: note the current "Knowledge base location" line in the installed `SKILL.md`, download the latest files the same way as install, copy them over the installed folder, and **re-set the location line** in the new `SKILL.md`. When copying over an existing install, keep the trailing slashes — without them `cp` nests the new folder *inside* the old install instead of replacing its contents:
+The agent should download the latest files the same way as install and copy them over the installed folder. Where your knowledge base lives is recorded in `kb-location.md`, which isn't part of the download — the copy leaves it alone, so there's nothing to restore afterward. (Installed before that file existed? The path is on a "Knowledge base location" line in the old `SKILL.md` — save it first, then write it into `kb-location.md`.)
+
+When copying over an existing install, keep the trailing slashes — without them `cp` nests the new folder *inside* the old install instead of replacing its contents:
 
 ```bash
 cp -R gym-operator-main/gym-operator/ ~/.claude/skills/gym-operator/
@@ -117,7 +119,7 @@ On claude.ai / Cowork, updating is manual: download the newest release zip and u
 Your knowledge base is plain markdown, so you can read it anywhere — but it's much nicer in [Obsidian](https://obsidian.md), a free app (Mac, Windows, Linux, iPhone, Android) that turns a folder of markdown files into a clickable wiki:
 
 1. Download Obsidian from [obsidian.md](https://obsidian.md/download) and open it.
-2. Choose **Open folder as vault** (on the vault picker, or via the vault switcher at the bottom-left) and select your `gym-operations-kb` folder.
+2. Choose **Open folder as vault** (on the vault picker, or via the vault switcher at the bottom-left) and select your `Gym Operations` folder.
 3. That's it. Every page renders cleanly, the `[[double-bracket]]` links between pages become clickable, and the graph view shows how your gym's knowledge connects.
 
 Because the vault is just your folder, there's no sync or export step — the operator writes a page, and it's there the next time you look. Your coaches can do the same on their own machines if the knowledge base lives on a shared drive. (If Obsidian prompts about trusting the vault or restricted mode, accepting the safe defaults is fine — the knowledge base uses no plugins.)

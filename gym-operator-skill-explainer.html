@@ -96,7 +96,7 @@
 
     <!-- eyebrows -->
     <text class="t-eyebrow" x="32" y="52">WORKS WITH ANY AI — CLAUDE · CHATGPT/CODEX · HERMES · PUBLIC REPO</text>
-    <text class="t-eyebrow" x="512" y="52">AT THE OWNER'S CHOSEN LOCATION · SHARED DRIVE RECOMMENDED</text>
+    <text class="t-eyebrow" x="512" y="52">AT THE OWNER'S CHOSEN LOCATION · GOOGLE DRIVE BY DEFAULT</text>
 
     <!-- left container: the skill -->
     <rect x="32" y="64" width="336" height="288" rx="8" fill="#ececec" stroke="#bfc0c0" stroke-width="1"/>
@@ -185,7 +185,7 @@
     <div class="card">
       <p class="fname">references/onboarding.md</p>
       <div class="role"><b>The setup</b> — runs once per gym</div>
-      <p>The guided flow that <strong>creates the knowledge base</strong>, in two parts. <strong>Part 1 (today, ~10 min):</strong> location, inputs, drafts confirmed in one pass, three questions only the owner can answer, wiki built, one real job run. <strong>Part 2 (anytime):</strong> the advanced questions, seeded into checklist.md with safe defaults in place until they're answered.</p>
+      <p>The guided flow that <strong>creates the knowledge base</strong>, in two parts. <strong>Part 1 (today, ~10 min):</strong> location found (Google Drive by default — never a path question), the website read and drafts confirmed in one pass, the goal asked, wiki built, one real job run. <strong>Part 2 (anytime):</strong> the advanced questions, seeded into checklist.md with safe defaults in place until they're answered.</p>
       <div class="kc"><b>friction rule:</b> confirming beats composing — it never asks what the sources already answered, and skipping never feels like failing</div>
     </div>
 
@@ -268,7 +268,7 @@
 <!-- ============ 04 ONBOARDING ============ -->
 <section>
   <div class="shead"><span class="eyebrow">04</span><h2>Onboarding, step by step</h2></div>
-  <p class="lede">Onboarding <em>is</em> the setup. It asks where the knowledge base should live, interviews the owner one question at a time, then writes the whole wiki from the conversation — and immediately makes it earn its keep with one real job.</p>
+  <p class="lede">Onboarding <em>is</em> the setup. It finds Google Drive and creates the knowledge base without asking for a path, reads the gym's website (and the socials linked from it), then writes the whole wiki from what it found — and immediately makes it earn its keep with one real job.</p>
 
   <div class="fig">
   <svg viewBox="0 0 880 696" width="880" height="696" role="img" aria-label="Onboarding: part one basics, part two advanced pass">
@@ -285,20 +285,20 @@
     <text class="t-mono" x="88" y="74">"most of it I can figure out — you answer a handful"</text>
 
     <rect x="64" y="112" width="352" height="56" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
-    <text class="t-name" x="88" y="136">2 · Choose the location</text>
-    <text class="t-mono" x="88" y="154">shared drive recommended · folders created</text>
+    <text class="t-name" x="88" y="136">2 · Location — found, not asked</text>
+    <text class="t-mono" x="88" y="154">Google Drive by default · never asks for a path</text>
 
     <rect x="64" y="192" width="352" height="56" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
-    <text class="t-name" x="88" y="216">3 · Collect the inputs</text>
-    <text class="t-mono" x="88" y="234">website · socials · ChatGPT export · exports · assets</text>
+    <text class="t-name" x="88" y="216">3 · Ask for the website</text>
+    <text class="t-mono" x="88" y="234">one question · socials found from the site itself</text>
 
     <rect x="64" y="272" width="352" height="56" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
     <text class="t-name" x="88" y="296">4 · Draft + confirm</text>
     <text class="t-mono" x="88" y="314">it drafts what sources answer — you fix or confirm</text>
 
     <rect x="64" y="352" width="352" height="56" rx="6" fill="#ffffff" stroke="#bfc0c0" stroke-width="1"/>
-    <text class="t-name" x="88" y="376">5 · Three questions</text>
-    <text class="t-mono" x="88" y="394">goal · hand-off work · approvals (safe default)</text>
+    <text class="t-name" x="88" y="376">5 · What only they can answer</text>
+    <text class="t-mono" x="88" y="394">goal asked cold · rhythm confirmed · approvals default</text>
 
     <rect x="64" y="432" width="352" height="56" rx="6" fill="rgba(235,108,54,0.08)" stroke="#eb6c36" stroke-width="1.2"/>
     <text class="t-name" x="88" y="456">6 · Build the wiki + checklist</text>
@@ -347,27 +347,26 @@
   <div class="pull">Thin answers become pages marked "needs-confirming" rather than an interrogation. Depth comes from use, not from onboarding.</div>
 
   <h2 style="font-size:22px;margin:40px 0 4px">The actual questions</h2>
-  <p class="lede">The friction rule: <strong>confirming beats composing.</strong> Most pages get drafted from the inputs and confirmed in one pass — the owner only composes answers to three questions today. Everything deeper waits in the checklist.</p>
+  <p class="lede">The friction rule: <strong>confirming beats composing.</strong> One input — the website — feeds the whole first pass, and only the goal is asked cold. Everything else is drafted from what the operator read and handed to the owner to correct. Everything deeper waits in the checklist.</p>
 
   <table>
     <tr><th style="width:48px">Input</th><th>What it asks for</th><th style="width:200px">Answers</th></tr>
-    <tr><td>A</td><td>Your gym's website address</td><td>identity · offers · usp · events</td></tr>
-    <tr><td>B</td><td>Social accounts you actively post on (links)</td><td>voice · content cadence</td></tr>
-    <tr><td>C</td><td>Your ChatGPT history export, if you have one</td><td>many pages at once</td></tr>
-    <tr><td>D</td><td>A gym-software export — attendance, membership — names stripped</td><td>members · goals context</td></tr>
-    <tr><td>E</td><td>Where your logo, photos, and templates live — links to a shared drive, or files dropped in (use for marketing is assumed; just flag anyone off-limits)</td><td>assets/assets.md</td></tr>
+    <tr><td>now</td><td>"What's your gym's website?" — the socials get found from the site's own links and read too, so they're never asked for</td><td>identity · offers · usp · voice · cadence · events</td></tr>
+    <tr><td>later</td><td>Where the logo and photos live — raised when a drafted post has no image</td><td>assets/assets.md</td></tr>
+    <tr><td>later</td><td>An attendance export, names stripped — raised the first time they ask who's gone quiet</td><td>the quiet-members job</td></tr>
+    <tr><td>later</td><td>A ChatGPT history export — raised only if they mention using it</td><td>many pages at once</td></tr>
   </table>
 
   <table style="margin-top:20px">
-    <tr><th style="width:120px">Part 1 · asked</th><th>Question</th><th style="width:170px">Fills</th></tr>
-    <tr><td>1</td><td>"What are you trying to make happen right now, and by when?" <em>(grow to 200 members by December · fill the fall foundations cohort · take a real vacation without the gym stalling)</em></td><td>gym/goals.md</td></tr>
-    <tr><td>2</td><td>"What work keeps coming back every week or month — the stuff you'd hand off if you could?" <em>(social posts · promoting recurring programs · member recognitions — level-up promotions, milestones, birthdays · lead follow-up · weekly numbers · checking in on members who've gone quiet)</em></td><td>gym/rhythm.md · the first job</td></tr>
-    <tr><td>3</td><td>"Anything your team can approve without you?" <em>(discounts · refunds · schedule changes · posting to social) — wave-off-able; default: everything returns to the owner</em></td><td>gym/team.md</td></tr>
-    <tr><td>+</td><td><em>Only if there were no sources at all:</em> "What is this gym, and who is it actually for?"</td><td>gym/identity.md</td></tr>
+    <tr><th style="width:120px">Part 1 · step 5</th><th>How it's raised</th><th style="width:170px">Fills</th></tr>
+    <tr><td>asked cold</td><td>"What are you trying to make happen right now, and by when?" <em>(grow to 200 members by December · fill the fall foundations cohort · take a real vacation without the gym stalling)</em> — the one thing no website reveals</td><td>gym/goals.md</td></tr>
+    <tr><td>confirmed</td><td>The recurring work is <em>drafted from the site and feed</em>, then corrected: "here's what looks like it comes back around — what did I miss, and which would you hand off tomorrow?"</td><td>gym/rhythm.md · the first job</td></tr>
+    <tr><td>waved off</td><td>"Anything your team can approve without you?" <em>(discounts · refunds · schedule changes · posting)</em> — a shrug is a complete answer; default: everything returns to the owner</td><td>gym/team.md</td></tr>
+    <tr><td>+</td><td><em>Only if there was no website or socials at all:</em> "What is this gym, and who is it actually for?"</td><td>gym/identity.md</td></tr>
   </table>
 
   <table style="margin-top:20px">
-    <tr><th style="width:120px">Confirmed</th><th>Drafted from the inputs, then confirmed in one recap</th><th style="width:170px">Fills</th></tr>
+    <tr><th style="width:120px">Confirmed</th><th>Drafted from the website and socials, then confirmed in one recap</th><th style="width:170px">Fills</th></tr>
     <tr><td>recap</td><td>Identity · voice (with a "you'd never say…" example) · offers · usp · members · content cadence · live events — presented as one summary: <em>"what's wrong or missing in that?"</em></td><td>six pages + work/projects/</td></tr>
   </table>
 
@@ -392,7 +391,7 @@
   <svg viewBox="0 0 880 568" width="880" height="568" role="img" aria-label="The knowledge base structure onboarding creates">
     <!-- root -->
     <rect x="64" y="196" width="224" height="56" rx="6" fill="rgba(235,108,54,0.08)" stroke="#eb6c36" stroke-width="1.2"/>
-    <text class="t-file" x="88" y="220">gym-operations-kb/</text>
+    <text class="t-file" x="88" y="220">Gym Operations/</text>
     <text class="t-mono" x="88" y="236">at the location the owner chose</text>
 
     <!-- branches -->
