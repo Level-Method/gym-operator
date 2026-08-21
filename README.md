@@ -38,12 +38,12 @@ That's it. The agent will install the skill and walk you through a ~10 minute se
 
 **Using Claude on the web or Cowork (the Claude desktop app)?** Skills there are installed by you through the interface, not by the agent — two minutes, no terminal:
 
-1. Download **`gym-operator.zip`** from the [latest release](https://github.com/Level-Method/gym-operator/releases/latest).
+1. Download the ready-made skill file: **[gym-operator.zip](https://github.com/Level-Method/gym-operator/raw/main/compiled/gym-operator.zip)** (it lives in this repo's `compiled/` folder, always current).
 2. In Claude, make sure **Settings → Capabilities → "Code execution and file creation"** is on (on Team/Enterprise plans an admin enables Skills in organization settings).
 3. Go to **Customize → Skills**, click **+**, choose **Upload a skill**, and upload the zip.
 4. Start a chat (or a Cowork session) and say: *"Set up my gym operator."*
 
-Don't upload GitHub's "Download ZIP" of this repo — it wraps everything in an extra folder and the upload will be rejected. Use the release zip, which is packaged in the exact shape Claude expects.
+Don't upload GitHub's "Download ZIP" of the whole repo — it wraps everything in an extra folder and the upload will be rejected. Use `compiled/gym-operator.zip`, which is packaged in the exact shape Claude expects.
 
 ## What it does
 
@@ -70,7 +70,7 @@ Plus: a welcome-back brief every session (it knows what week it is and what's co
 
 If you are an AI agent installing this skill for a gym owner:
 
-**First, check whether you can actually do this.** If you are running inside claude.ai or Cowork, your sandbox filesystem is temporary and you cannot register skills — don't improvise a workaround. Tell the owner to follow the "Using Claude on the web or Cowork" steps above (download the release zip, upload it under Customize → Skills), and offer to run onboarding as soon as it's installed. The steps below are for agents with a persistent filesystem (Claude Code, Cursor, Codex, and similar):
+**First, check whether you can actually do this.** If you are running inside claude.ai or Cowork, your sandbox filesystem is temporary and you cannot register skills — don't improvise a workaround. Follow "If you can't install directly" below: give the owner the `compiled/gym-operator.zip` download link and the upload clicks for their app, and offer to run onboarding as soon as it's installed. The steps below are for agents with a persistent filesystem (Claude Code, Cursor, Codex, and similar):
 
 1. **Get the files.** No git required — download and extract the repo:
 
@@ -98,6 +98,19 @@ If you are an AI agent installing this skill for a gym owner:
 
 4. **Confirm to the owner** what was installed and where, then begin onboarding.
 
+### If you can't install directly
+
+If your permissions or platform don't let you write to a skills folder (sandboxed filesystem, no shell, denied file access), **don't improvise and don't silently skip the install.** Hand the owner the pre-built skill file and the exact clicks for their app:
+
+> I can't install files from here, so here's the 30-second manual version. Download this file: **https://github.com/Level-Method/gym-operator/raw/main/compiled/gym-operator.zip**
+
+Then, depending on which app they're using:
+
+- **Claude desktop app (Cowork) or claude.ai:** Open **Customize → Skills**, click **+**, choose **Upload a skill**, and select the downloaded `gym-operator.zip`. (If prompted, enable **Settings → Capabilities → "Code execution and file creation"** first.) The skill is then registered for every future chat and Cowork session.
+- **ChatGPT desktop app:** There's no upload screen — Codex reads skills from a folder instead. Unzip the download and move the `gym-operator` folder into `~/.codex/skills/` (Mac: in Finder press **Cmd+Shift+G** and paste `~/.codex/skills`; Windows: `%USERPROFILE%\.codex\skills`). Create the folder if it doesn't exist. Walk them through it click by click — never assume they know how to unzip or move a folder.
+
+Once they confirm it's done, verify the skill responds (ask them to say *"set up my gym operator"*) and begin onboarding.
+
 ## Updating
 
 Tell your agent:
@@ -112,7 +125,7 @@ When copying over an existing install, keep the trailing slashes — without the
 cp -R gym-operator-main/gym-operator/ ~/.claude/skills/gym-operator/
 ```
 
-On claude.ai / Cowork, updating is manual: download the newest release zip and upload it again under Customize → Skills, replacing the old version. Your knowledge base itself is never touched by updates. On the next session, the operator reads `CHANGELOG.md` and tells you what's new in two lines — and offers one new capability tied to your gym.
+On claude.ai / Cowork, updating is manual: download the newest `compiled/gym-operator.zip` and upload it again under Customize → Skills, replacing the old version. Your knowledge base itself is never touched by updates. On the next session, the operator reads `CHANGELOG.md` and tells you what's new in two lines — and offers one new capability tied to your gym.
 
 ## Browsing your knowledge base like a wiki
 
