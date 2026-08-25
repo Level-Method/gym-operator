@@ -2,6 +2,10 @@
 
 After the owner pulls an update: read this file, tell them what's new in **two lines**, and offer exactly **one** new capability tied to their gym. Not a feature tour.
 
+## 2026-08-25 — the writing standard
+
+- Everything the operator writes — drafts, pages, replies — now follows a writing standard that cuts AI-sounding language: no puffery, no filler, plain words, specifics over vibes (`references/unslop.md`, adapted with credit from Cursor's pstack unslop skill)
+
 ## 2026-08-19 — install paths + naming
 
 - Every knowledge-base file is named to stand alone — `fall-throwdown-brief.md`, never `brief.md` — so graph and knowledge-map views read clearly

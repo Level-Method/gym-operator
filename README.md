@@ -147,6 +147,7 @@ gym-operator/
     ├── onboarding.md                 ← the ~10 minute setup
     ├── knowledge-base-structure.md   ← the spec for YOUR knowledge base
     ├── operator-rules.md             ← how it behaves, always
+    ├── unslop.md                     ← the writing standard: no AI-sounding output
     ├── maintenance.md                ← ingest + monthly health check
     └── jobs/                         ← the six job procedures
 ```
