@@ -210,7 +210,7 @@ Run it properly against the fresh knowledge base. Then exactly three questions: 
 
 ## Step 8 — One next thing
 
-One. Not a roadmap. Usually: "Want me to write that up so it runs the same way every week?" Then stop.
+One. Not a roadmap. Usually: "Want me to write that up so it runs the same way every week?" If the gym runs on Level Method, connecting their account is the other strong offer — live roster, level-ups, and retention data with a two-minute sign-in (`references/level-method-mcp.md`). Either way: one offer, then stop.
 
 ## Part 2 — the advanced pass (anytime)
 

@@ -2,6 +2,11 @@
 
 After the owner pulls an update: read this file, tell them what's new in **two lines**, and offer exactly **one** new capability tied to their gym. Not a feature tour.
 
+## 2026-08-26 — Level Method, live
+
+- Gyms on Level Method can now connect their account directly ("connect Level Method"): live roster, levels and the approval queue, promotions, retention dashboards, and Success Sessions — the jobs run on what's true right now, no exports
+- Reads flow freely into the work; anything that changes the account (approve a level, invite a member, record a session) is proposed first and runs only on your explicit yes, one action at a time
+
 ## 2026-08-25 — the writing standard
 
 - Everything the operator writes — drafts, pages, replies — now follows a writing standard that cuts AI-sounding language: no puffery, no filler, plain words, specifics over vibes (`references/unslop.md`, adapted with credit from Cursor's pstack unslop skill)

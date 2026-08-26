@@ -60,6 +60,10 @@ Six jobs ship today, each with a written procedure:
 
 Plus: a welcome-back brief every session (it knows what week it is and what's coming up), SOP capture ("write up how we onboard members"), a monthly health check, and a wins scoreboard built from your own log.
 
+### On Level Method? Connect it live
+
+If your gym runs on [Level Method](https://levelmethod.com), the operator can connect straight to your account through the Level Method connector — live roster, level-ups and the approval queue, retention dashboards, Success Sessions. No exports. Say *"connect Level Method"* and it walks you through a two-minute setup with a sign-in in your own browser (owner/admin account required). Reading your data is free-flowing; anything that *changes* your account — approving a level, inviting a member — is proposed first and only happens on your explicit yes.
+
 ## The rules it lives by
 
 - **Your data is yours.** Everything about your gym lives in *your* knowledge base — a folder of plain markdown files, set up in your Google Drive by default so your coaches and any AI platform can read it (somewhere else is fine too; you'll be asked nothing you can't answer). The skill contains process only. Delete the skill and your knowledge base still works with any AI, forever.
@@ -147,6 +151,7 @@ gym-operator/
     ├── onboarding.md                 ← the ~10 minute setup
     ├── knowledge-base-structure.md   ← the spec for YOUR knowledge base
     ├── operator-rules.md             ← how it behaves, always
+    ├── level-method-mcp.md           ← connecting live Level Method data
     ├── unslop.md                     ← the writing standard: no AI-sounding output
     ├── maintenance.md                ← ingest + monthly health check
     └── jobs/                         ← the six job procedures
